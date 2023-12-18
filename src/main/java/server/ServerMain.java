@@ -56,8 +56,10 @@ public class ServerMain implements Runnable {
             Gson gson = new Gson();
             JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
             JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
-            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>(){}.getType());
-            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>(){}.getType());
+            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
+            }.getType());
+            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
+            }.getType());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -68,6 +70,7 @@ public class ServerMain implements Runnable {
         private BufferedReader in;
         private PrintWriter out;
         private String choice;
+        private User user;
 
         public ConnectionHandler(Socket client) {
             this.client = client;
@@ -75,15 +78,18 @@ public class ServerMain implements Runnable {
 
         @Override
         public void run() {
+            user = new User();
             try {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    out.println("Connected to Hotelier!");
+                    if (user.isLogged())
+                        out.println(user.getUsername() + ", welcome to Hotelier!");
+                    else
+                        out.println("Welcome to Hotelier!");
                     out.println("1. Register");
                     out.println("2. Login");
                     out.println("0. Esci");
-                    out.print("Scelta: ");
                     choice = in.readLine();
                     switch (choice) {
                         case "1":
@@ -111,9 +117,15 @@ public class ServerMain implements Runnable {
                                     out.println("Choose your password:");
                                     String password = in.readLine();
                                     if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
-                                        out.println("LOGGED");
+                                        out.println("Logged as " + username);
+                                        user.setLogged(true);
+                                        user.setUsername(username);
                                         done = true;
+                                    } else {
+                                        out.println("Wrong password");
                                     }
+                                } else {
+                                    out.println("User not registered");
                                 }
                             }
                             break;

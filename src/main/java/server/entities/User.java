@@ -25,4 +25,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
 }
