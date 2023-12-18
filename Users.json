@@ -1,0 +1,22 @@
+[
+  {"username": "alice123", "password": "SecurePwd123"},
+  {"username": "bob_smith", "password": "P@ssw0rd!"},
+  {"username": "john_doe", "password": "SecretPass"},
+  {"username": "jane_doe", "password": "StrongP@ss"},
+  {"username": "emma_jones", "password": "Passw0rd123"},
+  {"username": "mike_miller", "password": "SecurePassword"},
+  {"username": "lisa_brown", "password": "P@ss123word"},
+  {"username": "david_clark", "password": "SafePwd456"},
+  {"username": "susan_wilson", "password": "Secret123"},
+  {"username": "kevin_adams", "password": "StrongPwd789"},
+  {"username": "natalie_cole", "password": "Pa$$word321"},
+  {"username": "richard_taylor", "password": "Secure123Pass"},
+  {"username": "olivia_white", "password": "StrongPassword"},
+  {"username": "chris_martin", "password": "Pass123Safe"},
+  {"username": "linda_lee", "password": "Pwd!9876"},
+  {"username": "george_jackson", "password": "SecurePassw0rd"},
+  {"username": "amy_wilkins", "password": "123StrongPwd"},
+  {"username": "jason_smith", "password": "Pa$$word789"},
+  {"username": "carolyn_davis", "password": "SecurePwd!"},
+  {"username": "william_clark", "password": "SafePassword456"}
+]

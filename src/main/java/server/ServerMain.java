@@ -2,13 +2,16 @@ package server;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import server.entities.Hotel;
+import server.entities.User;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,13 +20,13 @@ public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections;
     private ServerSocket server;
     private ExecutorService pool;
-    private Hotel[] hotels;
+    private ArrayList<Hotel> hotels;
+    private ArrayList<User> users;
 
 
     public static void main(String[] args) {
         ServerMain server = new ServerMain();
         server.run();
-
     }
 
     public ServerMain() {
@@ -50,10 +53,11 @@ public class ServerMain implements Runnable {
 
     public void loadFiles() {
         try {
-            GsonBuilder builder = new GsonBuilder();
             Gson gson = new Gson();
-            JsonReader reader = new JsonReader(new FileReader("Hotels.json"));
-            hotels = gson.fromJson(reader, Hotel[].class);
+            JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
+            JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
+            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>(){}.getType());
+            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>(){}.getType());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -92,6 +96,22 @@ public class ServerMain implements Runnable {
                                     out.println("Choose your password:");
                                     String password = in.readLine();
                                     if (!password.isBlank() && password.length() > 8) {
+                                        done = true;
+                                    }
+                                }
+                            }
+                            break;
+                        case "2":
+                            done = false;
+                            while (!done) {
+                                out.println("LOGIN");
+                                out.println("Choose your username:");
+                                String username = in.readLine();
+                                if (users.stream().anyMatch(user -> user.getUsername().equals(username))) {
+                                    out.println("Choose your password:");
+                                    String password = in.readLine();
+                                    if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
+                                        out.println("LOGGED");
                                         done = true;
                                     }
                                 }
