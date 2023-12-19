@@ -3,10 +3,14 @@ package server.entities;
 public class User {
     private String username;
     private String password;
-    private boolean isLogged;
+    transient private boolean isLogged;
 
     public User() {
         this.isLogged = false;
+    }
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
 
@@ -32,5 +36,12 @@ public class User {
 
     public void setLogged(boolean logged) {
         isLogged = logged;
+    }
+
+    public static boolean checkUsername(String username){
+        return (!username.isBlank() && username.length()>=8);
+    }
+    public static boolean checkPassword(String password){
+        return (!password.isBlank() && password.length()>=8);
     }
 }

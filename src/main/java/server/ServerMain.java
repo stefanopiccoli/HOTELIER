@@ -51,19 +51,6 @@ public class ServerMain implements Runnable {
         }
     }
 
-    public void loadFiles() {
-        try {
-            Gson gson = new Gson();
-            JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
-            JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
-            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
-            }.getType());
-            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
-            }.getType());
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public class ConnectionHandler implements Runnable {
         private Socket client;
@@ -83,28 +70,22 @@ public class ServerMain implements Runnable {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    if (user.isLogged())
-                        out.println(user.getUsername() + ", welcome to Hotelier!");
-                    else
-                        out.println("Welcome to Hotelier!");
-                    out.println("1. Register");
-                    out.println("2. Login");
+                    if (user.isLogged()) out.println(user.getUsername() + ", welcome to Hotelier!");
+                    else out.println("Welcome to Hotelier!");
+                    if (!user.isLogged()) out.println("1. Register");
+                    if (!user.isLogged()) out.println("2. Login");
                     out.println("0. Esci");
                     choice = in.readLine();
                     switch (choice) {
                         case "1":
                             boolean done = false;
                             while (!done) {
-
+                                out.println("REGISTER");
                                 out.println("Choose your username:");
                                 String username = in.readLine();
-                                if (!username.isBlank() && username.length() > 8) {
-                                    out.println("Choose your password:");
-                                    String password = in.readLine();
-                                    if (!password.isBlank() && password.length() > 8) {
-                                        done = true;
-                                    }
-                                }
+                                out.println("Choose your password:");
+                                String password = in.readLine();
+                                done = register(username, password);
                             }
                             break;
                         case "2":
@@ -113,29 +94,49 @@ public class ServerMain implements Runnable {
                                 out.println("LOGIN");
                                 out.println("Choose your username:");
                                 String username = in.readLine();
-                                if (users.stream().anyMatch(user -> user.getUsername().equals(username))) {
-                                    out.println("Choose your password:");
-                                    String password = in.readLine();
-                                    if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
-                                        out.println("Logged as " + username);
-                                        user.setLogged(true);
-                                        user.setUsername(username);
-                                        done = true;
-                                    } else {
-                                        out.println("Wrong password");
-                                    }
-                                } else {
-                                    out.println("User not registered");
-                                }
+                                out.println("Choose your password:");
+                                String password = in.readLine();
+                                done = login(username, password);
                             }
                             break;
                     }
-                } while (!Objects.equals(choice, "/exit"));
-
+                } while (!Objects.equals(choice, "0"));
+                out.println("Exiting...");
+                shutdown();
 
             } catch (IOException e) {
                 //TODO: handle
                 e.printStackTrace();
+            }
+        }
+
+        private boolean register(String username, String password) {
+            if (User.checkUsername(username)) {
+                if (users.stream().noneMatch(user -> user.getUsername().equals(username))) {
+                    if (User.checkPassword(password)) {
+                        try {
+                            users.add(new User(username, password));
+                            Writer writer = new FileWriter("Users.json");
+                            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                            gson.toJson(users.toArray(), writer);
+                            writer.flush();
+                            writer.close();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        out.println(username + " registered!");
+                        return true;
+                    } else {
+                        out.println("Password too short!");
+                        return false;
+                    }
+                } else {
+                    out.println("Name already exists!");
+                    return false;
+                }
+            } else {
+                out.println("Username too short!");
+                return false;
             }
         }
 
@@ -151,5 +152,39 @@ public class ServerMain implements Runnable {
                 e.printStackTrace();
             }
         }
+
+        public boolean login(String username, String password) {
+            if (users.stream().anyMatch(user -> user.getUsername().equals(username))) {
+                if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
+                    out.println("Logged as " + username);
+                    user.setLogged(true);
+                    user.setUsername(username);
+                    return true;
+                } else {
+                    out.println("Wrong password");
+                    return false;
+                }
+            } else {
+                out.println("User not registered");
+                return false;
+            }
+        }
+
     }
+
+    public void loadFiles() {
+        try {
+            Gson gson = new Gson();
+            JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
+            JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
+            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
+            }.getType());
+            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
+            }.getType());
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
