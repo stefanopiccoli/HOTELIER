@@ -13,8 +13,10 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Stream;
 
 public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections;
@@ -70,11 +72,18 @@ public class ServerMain implements Runnable {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    if (user.isLogged()) out.println(user.getUsername() + ", welcome to Hotelier!");
-                    else out.println("Welcome to Hotelier!");
-                    if (!user.isLogged()) out.println("1. Register");
-                    if (!user.isLogged()) out.println("2. Login");
-                    out.println("0. Esci");
+                    if (user.isLogged()) {
+                        out.println(user.getUsername() + ", welcome to Hotelier!");
+                        out.println("3. Logout");
+                    } else {
+                        out.println("Welcome to Hotelier!");
+                        out.println("1. Register");
+                        out.println("2. Login");
+                        out.println("0. Close");
+                    }
+                    out.println("4. Search hotel");
+                    out.println("5. Search all hotels");
+
                     choice = in.readLine();
                     switch (choice) {
                         case "1":
@@ -99,9 +108,41 @@ public class ServerMain implements Runnable {
                                 done = login(username, password);
                             }
                             break;
+                        case "3":
+                            logout();
+                            break;
+                        case "4":
+                            out.println("SEARCH HOTEL");
+                            out.println("Search hotel name:");
+                            String hotelName = in.readLine();
+                            out.println("Search hotel city:");
+                            String hotelCity = in.readLine();
+                            try {
+                                Hotel found = searchHotel(hotelName, hotelCity);
+                                out.println(found.printInfo());
+                            } catch (NullPointerException e) {
+                                out.println(e.getMessage());
+                            }
+                            break;
+                        case "5":
+                            out.println("SEARCH ALL HOTEL");
+                            out.println("Search hotel city:");
+                            String hotelsCity = in.readLine();
+                            try {
+                                Hotel[] found = searchAllHotels(hotelsCity);
+                                for (Hotel hotel : found){
+                                    out.println(hotel.printInfo()+"\n\n");
+                                }
+                            } catch (NullPointerException e) {
+                                out.println(e.getMessage());
+                            }
+                            break;
+
+
                     }
                 } while (!Objects.equals(choice, "0"));
                 out.println("Exiting...");
+                logout();
                 shutdown();
 
             } catch (IOException e) {
@@ -140,6 +181,41 @@ public class ServerMain implements Runnable {
             }
         }
 
+        private boolean login(String username, String password) {
+            if (users.stream().anyMatch(user -> user.getUsername().equals(username))) {
+                if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
+                    out.println("Logged as " + username);
+                    user.setLogged(true);
+                    user.setUsername(username);
+                    return true;
+                } else {
+                    out.println("Wrong password!");
+                    return false;
+                }
+            } else {
+                out.println("User not registered!");
+                return false;
+            }
+        }
+
+        private boolean logout() {
+            user.setLogged(false);
+            user.setUsername(null);
+            return true;
+        }
+
+        private Hotel searchHotel(String name, String city) throws NullPointerException {
+            Hotel search = hotels.stream().filter((hotel -> hotel.getName().contains(name) && hotel.getCity().contains(city))).findFirst().orElse(null);
+            if (search != null) return search;
+            else throw new NullPointerException("Hotel not found with these parameters!");
+        }
+
+        private Hotel[] searchAllHotels(String city) throws NullPointerException {
+            Hotel[] search = hotels.stream().filter((hotel -> hotel.getCity().contains(city))).toArray(Hotel[]::new);
+            if (search.length > 0) return search;
+            else throw new NullPointerException("There are no hotels with this parameter!");
+        }
+
         public void shutdown() {
             try {
                 in.close();
@@ -153,22 +229,6 @@ public class ServerMain implements Runnable {
             }
         }
 
-        public boolean login(String username, String password) {
-            if (users.stream().anyMatch(user -> user.getUsername().equals(username))) {
-                if (users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
-                    out.println("Logged as " + username);
-                    user.setLogged(true);
-                    user.setUsername(username);
-                    return true;
-                } else {
-                    out.println("Wrong password");
-                    return false;
-                }
-            } else {
-                out.println("User not registered");
-                return false;
-            }
-        }
 
     }
 
