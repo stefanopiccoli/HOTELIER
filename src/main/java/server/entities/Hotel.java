@@ -1,8 +1,10 @@
 package server.entities;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Hotel {
+    private int id;
     private String name;
     private String description;
     private String city;
@@ -10,6 +12,11 @@ public class Hotel {
     private String[] services;
     private String rate;
     private Map<String, Integer> ratings;
+    private ArrayList<Review> reviews;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -65,6 +72,19 @@ public class Hotel {
 
     public void setRatings(Map<String, Integer> ratings) {
         this.ratings = ratings;
+    }
+
+    public ArrayList<Review> getReviews() {
+        return reviews;
+    }
+
+    public void addReview(Review review) {
+        if (this.reviews != null)
+            this.reviews.add(review);
+        else {
+            this.reviews = new ArrayList<>();
+            this.reviews.add(review);
+        }
     }
 
     private int getMaxAttributeLength() {

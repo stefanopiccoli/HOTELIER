@@ -5,15 +5,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import server.entities.Hotel;
+import server.entities.Review;
 import server.entities.User;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Stream;
@@ -80,6 +78,7 @@ public class ServerMain implements Runnable {
                         out.println("1. Register");
                         out.println("2. Login");
                         out.println("0. Close");
+                        out.println("6. Add review");
                     }
                     out.println("4. Search hotel");
                     out.println("5. Search all hotels");
@@ -130,9 +129,42 @@ public class ServerMain implements Runnable {
                             String hotelsCity = in.readLine();
                             try {
                                 Hotel[] found = searchAllHotels(hotelsCity);
-                                for (Hotel hotel : found){
-                                    out.println(hotel.printInfo()+"\n\n");
+                                for (Hotel hotel : found) {
+                                    out.println(hotel.printInfo() + "\n\n");
                                 }
+                            } catch (NullPointerException e) {
+                                out.println(e.getMessage());
+                            }
+                            break;
+                        case "6":
+                            Hotel found = null;
+                            out.println("SEARCH HOTEL");
+                            try {
+                                do {
+                                    out.println("Search hotel name:");
+                                    hotelName = in.readLine();
+                                    out.println("Search hotel city:");
+                                    hotelCity = in.readLine();
+                                    found = searchHotel(hotelName, hotelCity);
+                                    out.println(found.printInfo());
+                                    out.println("Do you want to insert a review on this hotel? Y/n");
+                                } while (!Objects.equals(in.readLine(), "Y"));
+                                //TODO
+                                Review userReview = new Review(user.getUsername(),-1, -1, -1, -1, -1);
+                                out.println("Rate:");
+                                userReview.setRate(Integer.parseInt(in.readLine()));
+                                out.println("Cleaning:");
+                                userReview.setPosition(Integer.parseInt(in.readLine()));
+                                out.println("Position:");
+                                userReview.setCleaning(Integer.parseInt(in.readLine()));
+                                out.println("Services:");
+                                userReview.setPosition(Integer.parseInt(in.readLine()));
+                                out.println("Quality:");
+                                userReview.setQuality(Integer.parseInt(in.readLine()));
+                                out.println(userReview.getRate());
+
+                                insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
+
                             } catch (NullPointerException e) {
                                 out.println(e.getMessage());
                             }
@@ -214,6 +246,15 @@ public class ServerMain implements Runnable {
             Hotel[] search = hotels.stream().filter((hotel -> hotel.getCity().contains(city))).toArray(Hotel[]::new);
             if (search.length > 0) return search;
             else throw new NullPointerException("There are no hotels with this parameter!");
+        }
+
+        private boolean insertReview(int id, int GlobalScore, ArrayList<Integer> SingleScores) {
+            Hotel found = hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
+            if (found != null) {
+                found.addReview(new Review(user.getUsername(),GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
+                out.println(found.getReviews().get(0).getUsername());
+            }
+            return false;
         }
 
         public void shutdown() {
