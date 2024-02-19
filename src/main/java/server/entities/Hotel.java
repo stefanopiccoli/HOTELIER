@@ -1,6 +1,9 @@
 package server.entities;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
 
 public class Hotel {
@@ -120,14 +123,19 @@ public class Hotel {
         result.append(String.format("| %-15s : %-55s |\n", "Rate", this.rate));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Ratings: ").append(" ".repeat(lineLength - 10)).append("|\n");
-        result.append(String.format("|   - %-10s : %-56s |\n", "Cleaning", this.ratings.get("cleaning")));
-        result.append(String.format("|   - %-10s : %-56s |\n", "Position", this.ratings.get("position")));
-        result.append(String.format("|   - %-10s : %-56s |\n", "Services", this.ratings.get("services")));
-        result.append(String.format("|   - %-10s : %-56s |\n", "Quality", this.ratings.get("quality")));
+        result.append(String.format("|   - %-11s : %-56s |\n", "Cleaning", this.ratings.get("cleaning")));
+        result.append(String.format("|   - %-11s : %-56s |\n", "Position", this.ratings.get("position")));
+        result.append(String.format("|   - %-11s : %-56s |\n", "Services", this.ratings.get("services")));
+        result.append(String.format("|   - %-11s : %-56s |\n", "Quality", this.ratings.get("quality")));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Services: ").append(" ".repeat(lineLength - 11)).append("|\n");
         for (String service : this.services) {
             result.append(String.format("|   - %-69s |\n", service));
+        }
+        result.append("+").append("-".repeat(lineLength)).append("+\n");
+        result.append("| Reviews: ").append(" ".repeat(lineLength - 10)).append("|\n");
+        for (Review review : this.reviews) {
+            result.append(String.format("|    - %-17s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n", review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
         }
         result.append("+").append("-".repeat(lineLength)).append("+\n");
 

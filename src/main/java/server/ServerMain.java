@@ -14,7 +14,7 @@ import java.net.Socket;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections;
@@ -70,18 +70,21 @@ public class ServerMain implements Runnable {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    if (user.isLogged()) {
+                    if (user.isLogged())
                         out.println(user.getUsername() + ", welcome to Hotelier!");
-                        out.println("3. Logout");
-                    } else {
+                    else
                         out.println("Welcome to Hotelier!");
+                    if (!user.isLogged()) {
                         out.println("1. Register");
                         out.println("2. Login");
-                        out.println("0. Close");
-                        out.println("6. Add review");
                     }
+                    if (user.isLogged())
+                        out.println("3. Logout");
                     out.println("4. Search hotel");
                     out.println("5. Search all hotels");
+                    if (user.isLogged())
+                        out.println("6. Add review");
+                    out.println("0. Close");
 
                     choice = in.readLine();
                     switch (choice) {
@@ -149,22 +152,22 @@ public class ServerMain implements Runnable {
                                     out.println(found.printInfo());
                                     out.println("Do you want to insert a review on this hotel? Y/n");
                                 } while (!Objects.equals(in.readLine(), "Y"));
-                                //TODO
-                                Review userReview = new Review(user.getUsername(),-1, -1, -1, -1, -1);
-                                out.println("Rate:");
-                                userReview.setRate(Integer.parseInt(in.readLine()));
-                                out.println("Cleaning:");
-                                userReview.setPosition(Integer.parseInt(in.readLine()));
-                                out.println("Position:");
-                                userReview.setCleaning(Integer.parseInt(in.readLine()));
-                                out.println("Services:");
-                                userReview.setPosition(Integer.parseInt(in.readLine()));
-                                out.println("Quality:");
-                                userReview.setQuality(Integer.parseInt(in.readLine()));
-                                out.println(userReview.getRate());
-
-                                insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
-
+                                done = false;
+                                do {
+                                    Review userReview = new Review(user.getUsername(), -1, -1, -1, -1, -1);
+                                    out.println("Rate:");
+                                    userReview.setRate(Integer.parseInt(in.readLine()));
+                                    out.println("Cleaning:");
+                                    userReview.setCleaning(Integer.parseInt(in.readLine()));
+                                    out.println("Position:");
+                                    userReview.setPosition(Integer.parseInt(in.readLine()));
+                                    out.println("Services:");
+                                    userReview.setServices(Integer.parseInt(in.readLine()));
+                                    out.println("Quality:");
+                                    userReview.setQuality(Integer.parseInt(in.readLine()));
+                                    out.println(userReview.getRate());
+                                    done = insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
+                                } while (!done);
                             } catch (NullPointerException e) {
                                 out.println(e.getMessage());
                             }
@@ -172,7 +175,7 @@ public class ServerMain implements Runnable {
 
 
                     }
-                } while (!Objects.equals(choice, "0"));
+                } while (!Objects.equals(choice, "exit"));
                 out.println("Exiting...");
                 logout();
                 shutdown();
@@ -249,11 +252,32 @@ public class ServerMain implements Runnable {
         }
 
         private boolean insertReview(int id, int GlobalScore, ArrayList<Integer> SingleScores) {
-            Hotel found = hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
-            if (found != null) {
-                found.addReview(new Review(user.getUsername(),GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
-                out.println(found.getReviews().get(0).getUsername());
+            Writer writer = null;
+            boolean isValid = true;
+            for (Integer i:SingleScores)
+                if (i < 0 || i > 5) {
+                    isValid = false;
+                    break;
+                }
+            if (GlobalScore >=0 && GlobalScore <= 5 && isValid) {
+                try {
+                    Hotel found = hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
+                    if (found != null) {
+                        writer = new FileWriter("Hotels.json");
+                        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                        found.addReview(new Review(user.getUsername(), GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
+                        hotels.set(hotels.indexOf(found), found);
+                        gson.toJson(hotels.toArray(), writer);
+                        writer.flush();
+                        writer.close();
+                        out.println("The review has been successfully submitted!");
+                        return true;
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
+            out.println("Ratings must be between 1 and 10!");
             return false;
         }
 

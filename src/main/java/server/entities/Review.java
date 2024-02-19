@@ -1,20 +1,33 @@
 package server.entities;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Review {
     private String username;
+    private Calendar date;
     private int rate;
     private int cleaning;
     private int position;
     private int services;
     private int quality;
 
-    public Review(String username,int rate, int cleaning, int position, int services, int quality){
-        this.username=username;
-        this.rate=rate;
-        this.cleaning=cleaning;
-        this.position=position;
-        this.services=services;
-        this.quality=quality;
+    public Calendar getDate() {
+        return this.date;
+    }
+
+
+    public Review(String username, int rate, int cleaning, int position, int services, int quality) {
+        this.username = username;
+        this.date = Calendar.getInstance();
+        this.rate = rate;
+        this.cleaning = cleaning;
+        this.position = position;
+        this.services = services;
+        this.quality = quality;
     }
 
     public String getUsername() {
