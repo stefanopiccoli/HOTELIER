@@ -2,9 +2,8 @@ package server.entities;
 
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Hotel {
     private int id;
@@ -13,7 +12,7 @@ public class Hotel {
     private String city;
     private String phone;
     private String[] services;
-    private String rate;
+    private double rate;
     private Map<String, Integer> ratings;
     private ArrayList<Review> reviews;
 
@@ -61,11 +60,11 @@ public class Hotel {
         this.services = services;
     }
 
-    public String getRate() {
+    public double getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public void setRate(double rate) {
         this.rate = rate;
     }
 
@@ -101,12 +100,33 @@ public class Hotel {
             maxLength = Math.max(maxLength, service.length());
         }
 
-        maxLength = Math.max(maxLength, this.rate.length());
-
         return maxLength;
     }
 
+    private ArrayList<Double> calculateRate() {
+        Calendar endDate = Calendar.getInstance();
+        endDate.clear();
+        endDate.set(Calendar.YEAR, 2024);
+        endDate.set(Calendar.MONTH, 12);
+        endDate.set(Calendar.DATE, 31);
+        double nreviews = this.reviews.size();
+        double weightedNReviews = nreviews / 20;
+        double rateSum = 0;
+        double dateDiffSum = 0;
+        for (Review r : this.reviews) {
+            rateSum += r.getRate();
+            dateDiffSum += dateDiffSum + (double)(TimeUnit.MILLISECONDS.toDays(Math.abs(r.getDate().getTimeInMillis() - endDate.getTimeInMillis())))/1000;
+            System.out.println(dateDiffSum);
+        }
+        double avgRate = rateSum / nreviews;
+        double weightedAvgDate = Math.pow(Math.E, -0.1 * ( dateDiffSum /nreviews));
+        double rate = (1 * avgRate) + (0.5 * weightedNReviews) + (1 * weightedAvgDate);
+        this.rate = rate;
+        return new ArrayList<Double>(Arrays.asList(avgRate, weightedNReviews, weightedAvgDate, rate));
+    }
+
     public String printInfo() {
+        ArrayList<Double> res = this.calculateRate();
         int maxAttributeLength = getMaxAttributeLength();
         int lineLength = Math.max(maxAttributeLength, 71); // Lunghezza massima della riga, puoi adattarla secondo le tue preferenze
 
@@ -123,10 +143,10 @@ public class Hotel {
         result.append(String.format("| %-15s : %-55s |\n", "Rate", this.rate));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Ratings: ").append(" ".repeat(lineLength - 10)).append("|\n");
-        result.append(String.format("|   - %-11s : %-56s |\n", "Cleaning", this.ratings.get("cleaning")));
-        result.append(String.format("|   - %-11s : %-56s |\n", "Position", this.ratings.get("position")));
-        result.append(String.format("|   - %-11s : %-56s |\n", "Services", this.ratings.get("services")));
-        result.append(String.format("|   - %-11s : %-56s |\n", "Quality", this.ratings.get("quality")));
+        result.append(String.format("|   - %-11s : %-55s |\n", "Cleaning", this.ratings.get("cleaning")));
+        result.append(String.format("|   - %-11s : %-55s |\n", "Position", this.ratings.get("position")));
+        result.append(String.format("|   - %-11s : %-55s |\n", "Services", this.ratings.get("services")));
+        result.append(String.format("|   - %-11s : %-55s |\n", "Quality", this.ratings.get("quality")));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Services: ").append(" ".repeat(lineLength - 11)).append("|\n");
         for (String service : this.services) {
@@ -138,6 +158,7 @@ public class Hotel {
             result.append(String.format("|    - %-17s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n", review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
         }
         result.append("+").append("-".repeat(lineLength)).append("+\n");
+        result.append(String.format("%s %s %s %s",res.get(0),res.get(1),res.get(2),res.get(3)));
 
         return result.toString();
     }
