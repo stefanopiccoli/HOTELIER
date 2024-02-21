@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Reviews and PrintHotel update">
+    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Score formula">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" afterDir="false" />
@@ -24,8 +24,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;stefanopiccoli&quot;
+  }
+}</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2691a56e-82dd-4293-98d0-6dbdb057bfc7" />
+        <option name="url" value="https://github.com/stefanopiccoli/HOTELIER.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,7 +75,7 @@
       <recent name="C:\Users\stefa\IdeaProjects\HOTELIER" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="HOTELIER" />
@@ -160,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708382710191</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Score formula">
+      <option name="closed" value="true" />
+      <created>1708464045353</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708464045353</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +216,7 @@
     <MESSAGE value="SearchHotel SearchAllHotels" />
     <MESSAGE value="SearchHotel SearchAllHotels Reviews" />
     <MESSAGE value="Reviews and PrintHotel update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reviews and PrintHotel update" />
+    <MESSAGE value="Score formula" />
+    <option name="LAST_COMMIT_MESSAGE" value="Score formula" />
   </component>
 </project>

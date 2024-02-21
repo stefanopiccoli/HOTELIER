@@ -1,5 +1,6 @@
 package server.entities;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -64,7 +65,7 @@ public class Hotel {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 
@@ -104,25 +105,39 @@ public class Hotel {
     }
 
     private ArrayList<Double> calculateRate() {
+        final double MAX_SIZE_WEIGHT = 1;
+        double totalWeightedScore = 0;
+        int reviewsSize = this.reviews.size();
         Calendar endDate = Calendar.getInstance();
-        endDate.clear();
-        endDate.set(Calendar.YEAR, 2024);
-        endDate.set(Calendar.MONTH, 12);
-        endDate.set(Calendar.DATE, 31);
-        double nreviews = this.reviews.size();
-        double weightedNReviews = nreviews / 20;
-        double rateSum = 0;
-        double dateDiffSum = 0;
+//        endDate.clear();
+//        endDate.set(Calendar.YEAR, 2024);
+//        endDate.set(Calendar.MONTH, 12);
+//        endDate.set(Calendar.DATE, 31);
+//        double nreviews = reviewsSize;
+//        double weightedNReviews = nreviews / 20;
+//        double rateSum = 0;
+//        double dateDiffSum = 0;
+//        for (Review r : this.reviews) {
+//            rateSum += r.getRate();
+//            dateDiffSum += dateDiffSum + (double)(TimeUnit.MILLISECONDS.toDays(Math.abs(r.getDate().getTimeInMillis() - endDate.getTimeInMillis())))/1000;
+//            System.out.println(dateDiffSum);
+//        }
+//        double avgRate = rateSum / nreviews;
+//        double weightedAvgDate = Math.pow(Math.E, -0.1 * ( dateDiffSum /nreviews));
+//        double rate = (1 * avgRate) + (0.5 * weightedNReviews) + (1 * weightedAvgDate);
+        System.out.println(this.getName());
         for (Review r : this.reviews) {
-            rateSum += r.getRate();
-            dateDiffSum += dateDiffSum + (double)(TimeUnit.MILLISECONDS.toDays(Math.abs(r.getDate().getTimeInMillis() - endDate.getTimeInMillis())))/1000;
-            System.out.println(dateDiffSum);
+            double deltaTime = TimeUnit.MILLISECONDS.toDays(Math.abs((endDate.getTimeInMillis() - r.getDate().getTimeInMillis())));
+            double dataWeight = Math.exp(-0.00009 * deltaTime);
+            double weightedScore = r.getRate() * dataWeight;
+            totalWeightedScore += weightedScore;
         }
-        double avgRate = rateSum / nreviews;
-        double weightedAvgDate = Math.pow(Math.E, -0.1 * ( dateDiffSum /nreviews));
-        double rate = (1 * avgRate) + (0.5 * weightedNReviews) + (1 * weightedAvgDate);
-        this.rate = rate;
-        return new ArrayList<Double>(Arrays.asList(avgRate, weightedNReviews, weightedAvgDate, rate));
+        double sizeWeight = reviewsSize/100.0;
+        double rate = (totalWeightedScore / reviewsSize) * 1+sizeWeight ;
+        this.rate = Math.round(rate * 100.0) / 100.0;
+        System.out.printf("%s - %s - \n", rate, (totalWeightedScore / reviewsSize));
+
+        return new ArrayList<Double>(Arrays.asList(rate));
     }
 
     public String printInfo() {
@@ -140,7 +155,7 @@ public class Hotel {
         result.append(String.format("| %-15s : %-55s |\n", "City", this.city));
         result.append(String.format("| %-15s : %-55s |\n", "Phone", this.phone));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
-        result.append(String.format("| %-15s : %-55s |\n", "Rate", this.rate));
+        result.append(String.format("| %-15s : %-55s |\n", "Rate", new DecimalFormat("0.00").format(this.rate)));
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Ratings: ").append(" ".repeat(lineLength - 10)).append("|\n");
         result.append(String.format("|   - %-11s : %-55s |\n", "Cleaning", this.ratings.get("cleaning")));
@@ -158,7 +173,7 @@ public class Hotel {
             result.append(String.format("|    - %-17s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n", review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
         }
         result.append("+").append("-".repeat(lineLength)).append("+\n");
-        result.append(String.format("%s %s %s %s",res.get(0),res.get(1),res.get(2),res.get(3)));
+        result.append(String.format("%s", res.get(0)));
 
         return result.toString();
     }
