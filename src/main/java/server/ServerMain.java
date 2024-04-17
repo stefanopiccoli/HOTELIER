@@ -4,17 +4,17 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import server.entities.Badge;
 import server.entities.Hotel;
 import server.entities.Review;
 import server.entities.User;
 
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 
 public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections;
@@ -22,6 +22,13 @@ public class ServerMain implements Runnable {
     private ExecutorService pool;
     private ArrayList<Hotel> hotels;
     private ArrayList<User> users;
+    private Map<String, Badge> userBadges;
+    private final Object lock = new Object(); //TODO: eliminare e usare this nei synchronized
+    private boolean rankingsChanged = false;
+    private static final int TCP_PORT = 9999; // Porta TCP per accettare le connessioni dei client
+    private static final int UDP_PORT = 8888; // Porta UDP per inviare le notifiche ai client
+    private static final String MULTICAST_GROUP = "230.0.0.0";
+    private static final int MAX_PACKET_SIZE = 1024;
 
 
     public static void main(String[] args) {
@@ -36,8 +43,8 @@ public class ServerMain implements Runnable {
     @Override
     public void run() {
         try {
-            loadFiles();
-            server = new ServerSocket(9999);
+            init();
+            server = new ServerSocket(TCP_PORT);
             pool = Executors.newCachedThreadPool();
             while (true) {
                 Socket client = server.accept();
@@ -66,10 +73,13 @@ public class ServerMain implements Runnable {
         @Override
         public void run() {
             user = new User();
+            Thread udpThread = new Thread(new UDPNotifier());
+            udpThread.start();
             try {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+//                    broadcast("user joined the chat...");
                     if (user.isLogged())
                         out.println(user.getUsername() + ", welcome to Hotelier!");
                     else
@@ -121,7 +131,7 @@ public class ServerMain implements Runnable {
                             String hotelCity = in.readLine();
                             try {
                                 Hotel found = searchHotel(hotelName, hotelCity);
-                                out.println(found.printInfo());
+                                out.println(found.printInfo(userBadges));
                             } catch (NullPointerException e) {
                                 out.println(e.getMessage());
                             }
@@ -133,7 +143,7 @@ public class ServerMain implements Runnable {
                             try {
                                 Hotel[] found = searchAllHotels(hotelsCity);
                                 for (Hotel hotel : found) {
-                                    out.println(hotel.printInfo() + "\n\n");
+                                    out.println(hotel.printInfo(userBadges) + "\n\n");
                                 }
                             } catch (NullPointerException e) {
                                 out.println(e.getMessage());
@@ -149,7 +159,7 @@ public class ServerMain implements Runnable {
                                     out.println("Search hotel city:");
                                     hotelCity = in.readLine();
                                     found = searchHotel(hotelName, hotelCity);
-                                    out.println(found.printInfo());
+                                    out.println(found.printInfo(userBadges));
                                     out.println("Do you want to insert a review on this hotel? Y/n");
                                 } while (!Objects.equals(in.readLine(), "Y"));
                                 done = false;
@@ -171,6 +181,28 @@ public class ServerMain implements Runnable {
                             } catch (NullPointerException e) {
                                 out.println(e.getMessage());
                             }
+                            break;
+                        case "7":
+                            for (Hotel h : hotels) {
+                                h.calculateRate();
+                            }
+                            Writer writer = new FileWriter("Hotels.json");
+                            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                            gson.toJson(hotels.toArray(), writer);
+                            writer.flush();
+                            writer.close();
+                            out.println("DONE");
+//                            TODO: DELETE
+                            break;
+
+                        case "8":
+                            synchronized (lock) {
+                                rankingsChanged = true;
+                                lock.notify();
+                            }
+                            break;
+                        case "9":
+                            loadUserBadges();
                             break;
 
 
@@ -254,18 +286,23 @@ public class ServerMain implements Runnable {
         private boolean insertReview(int id, int GlobalScore, ArrayList<Integer> SingleScores) {
             Writer writer = null;
             boolean isValid = true;
-            for (Integer i:SingleScores)
+            //Validazione dei punteggi
+            for (Integer i : SingleScores)
                 if (i < 0 || i > 5) {
                     isValid = false;
                     break;
                 }
-            if (GlobalScore >=0 && GlobalScore <= 5 && isValid) {
+            //Validazione dello score totale
+            if (GlobalScore >= 0 && GlobalScore <= 5 && isValid) {
                 try {
+                    //Ottengo l'hotel dall'id
                     Hotel found = hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
                     if (found != null) {
+                        //Scrivo sul file degli hotel la recensione e ricalcolo il rate
                         writer = new FileWriter("Hotels.json");
                         Gson gson = new GsonBuilder().setPrettyPrinting().create();
                         found.addReview(new Review(user.getUsername(), GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
+                        found.calculateRate();
                         hotels.set(hotels.indexOf(found), found);
                         gson.toJson(hotels.toArray(), writer);
                         writer.flush();
@@ -297,8 +334,39 @@ public class ServerMain implements Runnable {
 
     }
 
-    public void loadFiles() {
+    private class UDPNotifier implements Runnable {
+        @Override
+        public void run() {
+            try {
+                InetAddress multicastGroup = InetAddress.getByName(MULTICAST_GROUP);
+                try (MulticastSocket socket = new MulticastSocket()) {
+                    while (true) {
+                        synchronized (lock) {
+                            // Attendere finché non ci sono cambiamenti nei ranking degli hotel
+                            while (!rankingsChanged) {
+                                lock.wait();
+                            }
+                            String message = "New hotels rank available!";
+                            byte[] buffer = message.getBytes();
+
+                            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, UDP_PORT);
+                            socket.send(packet);
+                            System.out.println("Notification sent to clients: " + message);
+
+                            // Resetta la variabile di controllo
+                            rankingsChanged = false;
+                        }
+                    }
+                }
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void init() {
         try {
+            //Carico i file nelle variabili del server all'avvio
             Gson gson = new Gson();
             JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
             JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
@@ -306,10 +374,42 @@ public class ServerMain implements Runnable {
             }.getType());
             users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
             }.getType());
+            //TODO: WRITE CALCULATED READ
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        //Calcolo i rate a partire dalle recensioni
+        for (Hotel h : hotels) {
+            h.calculateRate();
+        }
+        //Calcolo i badge degli utenti a partire dalle recensioni
+        loadUserBadges();
     }
 
+    public void loadUserBadges() {
+        userBadges = new ConcurrentHashMap<>();
+        Map<String, Integer> nReviews = new HashMap<>();
+        for (Hotel h : hotels)
+            for (Review r : h.getReviews())
+                if (nReviews.containsKey(r.getUsername()))
+                    nReviews.put(r.getUsername(), nReviews.get(r.getUsername()) + 1);
+                else
+                    nReviews.putIfAbsent(r.getUsername(), 1);
+
+        for (Map.Entry<String, Integer> entry : nReviews.entrySet()) {
+            userBadges.putIfAbsent(entry.getKey(),new Badge(entry.getValue()));
+            System.out.println("Chiave: " + entry.getKey() + ", Valore: " + entry.getValue() + ", Badge: "+ userBadges.get(entry.getKey()).getBadge());
+        }
+
+
+    }
+
+    public void broadcast(String message) {
+        for (ConnectionHandler ch : connections) {
+            if (ch != null) {
+                ch.out.println(message);
+            }
+        }
+    }
 
 }

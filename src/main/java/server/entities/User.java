@@ -1,5 +1,7 @@
 package server.entities;
 
+import java.util.ArrayList;
+
 public class User {
     private String username;
     private String password;
@@ -43,5 +45,23 @@ public class User {
     }
     public static boolean checkPassword(String password){
         return (!password.isBlank() && password.length()>=8);
+    }
+
+    public Badge showMyBadges(ArrayList<Hotel> hotels){
+        int reviewCount = 0;
+        for (Hotel h: hotels){
+            for (Review r: h.getReviews()){
+                if (r.getUsername().equals(this.username)){
+                    reviewCount++;
+                }
+            }
+        }
+
+        for (Badge.BadgeType type : Badge.BadgeType.values()) {
+            if (reviewCount >= type.getBoundFrom() && reviewCount <= type.getBoundTo()) {
+                return new Badge(type);
+            }
+        }
+        return null;
     }
 }

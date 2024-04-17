@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Score formula">
+      <change afterPath="$PROJECT_DIR$/jsonGenerator.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server/entities/Badge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.ClientMain (1).executor&quot;: &quot;Run&quot;,
     &quot;Application.ClientMain.executor&quot;: &quot;Run&quot;,
     &quot;Application.ServerMain.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -75,7 +81,20 @@
       <recent name="C:\Users\stefa\IdeaProjects\HOTELIER" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientMain (1)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
+      <module name="HOTELIER" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="HOTELIER" />
@@ -102,6 +121,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ClientMain (1)" />
+      <item itemvalue="Application.ClientMain" />
+      <item itemvalue="Application.ServerMain" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientMain" />
@@ -182,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708464045353</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Score formula">
+      <option name="closed" value="true" />
+      <created>1708551912080</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708551912080</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

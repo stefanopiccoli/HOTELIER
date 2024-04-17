@@ -1,0 +1,55 @@
+[
+  '{{repeat(150)}}',
+  {
+    id: '{{index()}}',
+    name: function (tags) {
+     var capoluoghi =["Aosta","Torino","Genova","Milano","Trento","Venezia","Trieste","Bologna","Firenze","Ancona","Perugia","Roma","L'Aquila","Campobasso","Napoli","Bari","Potenza","Catanzaro","Palermo","Cagliari"];
+      return 'Hotel '+capoluoghi[tags.integer(0, capoluoghi.length -1)]+" "+tags.company();
+    },
+    description: 'Un ridente hotel a {{street()}}, {{integer(1,50)}}',
+    city: function (tags) {return this.name.split(' ')[1];},
+    phone: '{{phone()}}',
+    services: ['{{repeat(1, 2)}}',function (tags) {
+     var servizi = [
+      "TV in camera",
+      "Palestra",
+      "Cancellazione gratuita",
+      "Piscina",
+      "Colazione",
+      "Guida turistica",
+      "Aria condizionata",
+      "Riscaldamento",
+      "SPA"
+    ];
+     return servizi[tags.integer(0, servizi.length -1)];
+    }],
+    rate:0,
+    ratings:{
+      cleaning: 0,
+      position: 0,
+      services: 0,
+      quality: 0
+    },
+    reviews:['{{repeat(20, 30)}}',
+      {
+        username: function (tags) {
+     var usernames =["Newman416","Harding271","Christine456","Briggs889","Violet647","Dianne911","Palmer142","Aida928","Webb399","Saunders465","Cooke491","Lucile198","Kelley827","Anastasia365","Chen357","Gamble428","Erickson830","Sherman856","White432","Marianne346","Jane146","Aguilar417","Mitchell474","Tania344","Stevens193","Mccoy285","Kane809","Calderon381","Kasey770","Wilcox917","Mabel883","Luella174","Kerr793","Osborne917","Cruz758","Church326","Puckett417","Alisa387","Verna679","Jenkins638","Combs584","Rosanna226","Sadie133","Barlow796","Patty314"];
+      return usernames[tags.integer(0, usernames.length -1)];
+    },
+        date: {
+          year: '{{integer(2020,2024)}}',
+          month: '{{integer(0,11)}}',
+          dayOfMonth: '{{integer(1,28)}}',
+          hourOfDay: '{{integer(1,23)}}',
+          minute: '{{integer(1,59)}}',
+          second: '{{integer(1,59)}}'
+        },
+        rate: '{{integer(1,5)}}',
+        cleaning: '{{integer(1,5)}}',
+        position: '{{integer(1,5)}}',
+        services: '{{integer(1,5)}}',
+        quality: '{{integer(1,5)}}'
+      }
+    ]
+  }
+]
