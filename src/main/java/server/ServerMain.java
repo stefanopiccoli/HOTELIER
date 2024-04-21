@@ -16,6 +16,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static utils.Cities.getCities;
+
 public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections;
     private ServerSocket server;
@@ -23,6 +25,7 @@ public class ServerMain implements Runnable {
     private ArrayList<Hotel> hotels;
     private ArrayList<User> users;
     private Map<String, Badge> userBadges;
+    private Map<String, ArrayList<Hotel>> localRankings;
     private final Object lock = new Object(); //TODO: eliminare e usare this nei synchronized
     private boolean rankingsChanged = false;
     private static final int TCP_PORT = 9999; // Porta TCP per accettare le connessioni dei client
@@ -204,6 +207,9 @@ public class ServerMain implements Runnable {
                         case "9":
                             loadUserBadges();
                             break;
+                        case "10":
+                            calculateLocalRankings();
+                            break;
 
 
                     }
@@ -384,6 +390,8 @@ public class ServerMain implements Runnable {
         }
         //Calcolo i badge degli utenti a partire dalle recensioni
         loadUserBadges();
+        //Calcolo dei rankings locali a partire dai Rate dei singoli hotel, raggruppati per Città
+        calculateLocalRankings();
     }
 
     public void loadUserBadges() {
@@ -397,11 +405,29 @@ public class ServerMain implements Runnable {
                     nReviews.putIfAbsent(r.getUsername(), 1);
 
         for (Map.Entry<String, Integer> entry : nReviews.entrySet()) {
-            userBadges.putIfAbsent(entry.getKey(),new Badge(entry.getValue()));
-            System.out.println("Chiave: " + entry.getKey() + ", Valore: " + entry.getValue() + ", Badge: "+ userBadges.get(entry.getKey()).getBadge());
+            userBadges.putIfAbsent(entry.getKey(), new Badge(entry.getValue()));
+//            System.out.println("Chiave: " + entry.getKey() + ", Valore: " + entry.getValue() + ", Badge: " + userBadges.get(entry.getKey()).getBadge()); TODO: remove
+        }
+    }
+
+    public void calculateLocalRankings() {
+        localRankings = new ConcurrentHashMap<>();
+        for (String c : getCities()) {
+            localRankings.putIfAbsent(c, new ArrayList<Hotel>());
         }
 
+        // Definizione di un Comparator personalizzato per ordinare gli hotel per localRank
+        Comparator<Hotel> rankComparator = Comparator.comparingDouble(Hotel::getRate).reversed();
 
+        for (Hotel h : hotels) {
+            localRankings.get(h.getCity()).add(h);
+        }
+
+        for (ArrayList<Hotel> hotels : localRankings.values()) {
+            hotels.sort(rankComparator);
+            for (Hotel h : hotels)
+                System.out.println(h.getName() + ", Punteggio:" + h.getRate() + " ," + h.getCity()); //TODO: remove
+        }
     }
 
     public void broadcast(String message) {

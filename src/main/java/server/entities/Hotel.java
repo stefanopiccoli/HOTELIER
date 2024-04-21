@@ -115,7 +115,6 @@ public class Hotel {
         double quality = 0.0;
         int reviewsSize = this.reviews.size();
         Calendar endDate = Calendar.getInstance();
-        System.out.println(this.getName());
         for (Review r : this.reviews) {
             double deltaTime = TimeUnit.MILLISECONDS.toDays(Math.abs((endDate.getTimeInMillis() - r.getDate().getTimeInMillis())));
             double dataWeight = Math.exp(-0.00009 * deltaTime);
