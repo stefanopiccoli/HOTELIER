@@ -9,12 +9,12 @@
       "TV in camera",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.81,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 4,
+      "quality": 2
     },
     "reviews": [
       {
@@ -337,7 +337,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 1,
@@ -348,12 +349,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.9,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -676,7 +677,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 2,
@@ -687,12 +689,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.74,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 2,
+      "quality": 3
     },
     "reviews": [
       {
@@ -1015,7 +1017,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 3,
@@ -1026,12 +1029,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.16,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -1481,8 +1484,25 @@
         "position": 4,
         "services": 4,
         "quality": 1
+      },
+      {
+        "username": "pstefano",
+        "date": {
+          "year": 2024,
+          "month": 3,
+          "dayOfMonth": 22,
+          "hourOfDay": 20,
+          "minute": 49,
+          "second": 7
+        },
+        "rate": 2,
+        "cleaning": 1,
+        "position": 5,
+        "services": 2,
+        "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 4,
@@ -1493,12 +1513,12 @@
     "services": [
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 2.64,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -1821,7 +1841,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 5,
@@ -1833,12 +1854,12 @@
       "Piscina",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.47,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -2225,7 +2246,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 6,
@@ -2236,12 +2258,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -2708,7 +2730,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 7,
@@ -2719,12 +2742,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.89,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -3191,7 +3214,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 8,
@@ -3203,12 +3227,12 @@
       "Riscaldamento",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.9,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -3563,7 +3587,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 9,
@@ -3575,12 +3600,12 @@
       "Guida turistica",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.35,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -3935,23 +3960,24 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 10,
-    "name": "Hotel L'Aquila Corporana",
+    "name": "Hotel L\u0027Aquila Corporana",
     "description": "Un ridente hotel a Grimes Road, 19",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(863) 406-3312",
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.84,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -4338,7 +4364,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 11,
@@ -4350,12 +4377,12 @@
       "Riscaldamento",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.98,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -4710,7 +4737,8 @@
         "services": 5,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 12,
@@ -4722,12 +4750,12 @@
       "Palestra",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.86,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -5178,7 +5206,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 13,
@@ -5190,12 +5219,12 @@
       "Guida turistica",
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.03,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 2
     },
     "reviews": [
       {
@@ -5614,7 +5643,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 14,
@@ -5625,12 +5655,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.11,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -6113,7 +6143,8 @@
         "services": 5,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 15,
@@ -6125,12 +6156,12 @@
       "Colazione",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.96,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -6613,7 +6644,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 16,
@@ -6624,12 +6656,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.8,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -7064,7 +7096,8 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 17,
@@ -7075,12 +7108,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.95,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -7531,7 +7564,8 @@
         "services": 3,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 18,
@@ -7543,12 +7577,12 @@
       "TV in camera",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.95,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 2,
+      "quality": 3
     },
     "reviews": [
       {
@@ -7999,7 +8033,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 19,
@@ -8011,12 +8046,12 @@
       "Guida turistica",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 2.97,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -8467,7 +8502,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 20,
@@ -8478,12 +8514,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.47,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -8966,7 +9002,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 21,
@@ -8977,12 +9014,12 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.1,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -9321,7 +9358,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 22,
@@ -9332,12 +9370,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 2.68,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 2,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -9740,7 +9778,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 23,
@@ -9751,12 +9790,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.71,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -10207,7 +10246,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 24,
@@ -10219,12 +10259,12 @@
       "Aria condizionata",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.64,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -10547,7 +10587,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 25,
@@ -10559,12 +10600,12 @@
       "Colazione",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.62,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -10903,7 +10944,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 26,
@@ -10915,12 +10957,12 @@
       "Riscaldamento",
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.01,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -11275,7 +11317,8 @@
         "services": 4,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 27,
@@ -11286,12 +11329,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.78,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -11742,7 +11785,8 @@
         "services": 4,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 28,
@@ -11753,12 +11797,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.41,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -12209,7 +12253,8 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 29,
@@ -12220,12 +12265,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.57,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -12564,7 +12609,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 30,
@@ -12575,12 +12621,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.44,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -12935,24 +12981,25 @@
         "services": 5,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 31,
-    "name": "Hotel L'Aquila Boink",
+    "name": "Hotel L\u0027Aquila Boink",
     "description": "Un ridente hotel a Baltic Street, 41",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(869) 479-3793",
     "services": [
       "Guida turistica",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.01,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -13291,7 +13338,8 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 32,
@@ -13303,12 +13351,12 @@
       "Aria condizionata",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.08,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -13711,7 +13759,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 33,
@@ -13723,12 +13772,12 @@
       "Aria condizionata",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.23,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -14051,7 +14100,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 34,
@@ -14062,12 +14112,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.93,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -14518,7 +14568,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 35,
@@ -14530,12 +14581,12 @@
       "Piscina",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.09,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -14986,7 +15037,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 36,
@@ -14997,12 +15049,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.35,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -15421,24 +15473,25 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 37,
-    "name": "Hotel L'Aquila Temorak",
+    "name": "Hotel L\u0027Aquila Temorak",
     "description": "Un ridente hotel a Nolans Lane, 20",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(943) 483-3774",
     "services": [
       "Palestra",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.95,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -15825,7 +15878,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 38,
@@ -15836,12 +15890,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.14,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -16212,7 +16266,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 39,
@@ -16223,12 +16278,12 @@
     "services": [
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.23,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -16551,7 +16606,8 @@
         "services": 2,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 40,
@@ -16563,12 +16619,12 @@
       "TV in camera",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.97,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -16939,7 +16995,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 41,
@@ -16950,12 +17007,12 @@
     "services": [
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 2.39,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -17374,7 +17431,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 42,
@@ -17385,12 +17443,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 2.89,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 2,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -17809,7 +17867,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 43,
@@ -17821,12 +17880,12 @@
       "Palestra",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.54,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -18229,7 +18288,8 @@
         "services": 3,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 44,
@@ -18241,12 +18301,12 @@
       "TV in camera",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.21,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -18665,7 +18725,8 @@
         "services": 3,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 45,
@@ -18677,12 +18738,12 @@
       "Colazione",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.39,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -19133,7 +19194,8 @@
         "services": 4,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 46,
@@ -19144,12 +19206,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.98,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -19504,7 +19566,8 @@
         "services": 2,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 47,
@@ -19515,12 +19578,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.35,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -19875,7 +19938,8 @@
         "services": 5,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 48,
@@ -19887,12 +19951,12 @@
       "Piscina",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.92,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -20359,7 +20423,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 49,
@@ -20371,12 +20436,12 @@
       "Piscina",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.0,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -20827,7 +20892,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 50,
@@ -20838,12 +20904,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.19,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -21262,7 +21328,8 @@
         "services": 2,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 51,
@@ -21273,12 +21340,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.12,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -21697,7 +21764,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 52,
@@ -21709,12 +21777,12 @@
       "TV in camera",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.2,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -22197,24 +22265,25 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 53,
-    "name": "Hotel L'Aquila Rodeocean",
+    "name": "Hotel L\u0027Aquila Rodeocean",
     "description": "Un ridente hotel a Beverley Road, 40",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(961) 481-2102",
     "services": [
       "Colazione",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.8,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -22553,7 +22622,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 54,
@@ -22565,12 +22635,12 @@
       "Colazione",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.98,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -22973,24 +23043,25 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 55,
-    "name": "Hotel L'Aquila Exostream",
+    "name": "Hotel L\u0027Aquila Exostream",
     "description": "Un ridente hotel a Emerson Place, 4",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(806) 474-3145",
     "services": [
       "Palestra",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.46,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -23345,7 +23416,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 56,
@@ -23357,12 +23429,12 @@
       "Guida turistica",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.68,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -23765,7 +23837,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 57,
@@ -23777,12 +23850,12 @@
       "Palestra",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.01,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -24265,7 +24338,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 58,
@@ -24276,12 +24350,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.31,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -24636,7 +24710,8 @@
         "services": 2,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 59,
@@ -24648,12 +24723,12 @@
       "Colazione",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.44,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -25072,7 +25147,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 60,
@@ -25083,12 +25159,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.29,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -25491,7 +25567,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 61,
@@ -25502,12 +25579,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.77,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -25926,7 +26003,8 @@
         "services": 1,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 62,
@@ -25937,12 +26015,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.34,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -26425,7 +26503,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 63,
@@ -26436,12 +26515,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.95,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -26828,7 +26907,8 @@
         "services": 2,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 64,
@@ -26839,12 +26919,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.54,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -27263,7 +27343,8 @@
         "services": 2,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 65,
@@ -27274,12 +27355,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.58,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 2,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -27618,7 +27699,8 @@
         "services": 3,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 66,
@@ -27629,12 +27711,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.37,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -27957,7 +28039,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 67,
@@ -27969,12 +28052,12 @@
       "TV in camera",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.48,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 2,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -28409,7 +28492,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 68,
@@ -28421,12 +28505,12 @@
       "Riscaldamento",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 2.95,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -28893,7 +28977,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 69,
@@ -28905,12 +28990,12 @@
       "SPA",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.28,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -29265,7 +29350,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 70,
@@ -29277,12 +29363,12 @@
       "SPA",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 2.53,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -29653,7 +29739,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 71,
@@ -29665,12 +29752,12 @@
       "Aria condizionata",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.65,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -30041,7 +30128,8 @@
         "services": 4,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 72,
@@ -30053,12 +30141,12 @@
       "Riscaldamento",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.83,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -30429,7 +30517,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 73,
@@ -30440,12 +30529,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.86,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -30848,7 +30937,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 74,
@@ -30859,12 +30949,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.89,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -31283,7 +31373,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 75,
@@ -31295,12 +31386,12 @@
       "TV in camera",
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 2.62,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -31655,23 +31746,24 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 76,
-    "name": "Hotel L'Aquila Miraclis",
+    "name": "Hotel L\u0027Aquila Miraclis",
     "description": "Un ridente hotel a Ridge Court, 35",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(954) 554-2615",
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.1,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -32138,7 +32230,8 @@
         "services": 5,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 77,
@@ -32149,12 +32242,12 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.34,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -32605,7 +32698,8 @@
         "services": 2,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 78,
@@ -32617,12 +32711,12 @@
       "Guida turistica",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.14,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -32993,23 +33087,24 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 79,
-    "name": "Hotel L'Aquila Polarax",
+    "name": "Hotel L\u0027Aquila Polarax",
     "description": "Un ridente hotel a Hubbard Street, 38",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(998) 506-2147",
     "services": [
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 2.73,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -33476,7 +33571,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 80,
@@ -33487,12 +33583,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.21,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -33863,7 +33959,8 @@
         "services": 5,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 81,
@@ -33875,12 +33972,12 @@
       "Cancellazione gratuita",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.13,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -34283,7 +34380,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 82,
@@ -34294,12 +34392,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.97,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -34654,7 +34752,8 @@
         "services": 3,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 83,
@@ -34666,12 +34765,12 @@
       "TV in camera",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.99,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -35090,7 +35189,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 84,
@@ -35101,12 +35201,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.99,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -35557,7 +35657,8 @@
         "services": 3,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 85,
@@ -35569,12 +35670,12 @@
       "Riscaldamento",
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.65,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 2
     },
     "reviews": [
       {
@@ -35897,23 +35998,24 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 86,
-    "name": "Hotel L'Aquila Skybold",
+    "name": "Hotel L\u0027Aquila Skybold",
     "description": "Un ridente hotel a Schenectady Avenue, 25",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(830) 435-2364",
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.22,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -36332,7 +36434,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 87,
@@ -36343,12 +36446,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.02,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -36703,7 +36806,8 @@
         "services": 3,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 88,
@@ -36715,12 +36819,12 @@
       "Piscina",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.09,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -37187,7 +37291,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 89,
@@ -37198,12 +37303,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.21,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -37638,7 +37743,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 90,
@@ -37650,12 +37756,12 @@
       "Guida turistica",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.7,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -37978,7 +38084,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 91,
@@ -37990,12 +38097,12 @@
       "TV in camera",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.52,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -38398,7 +38505,8 @@
         "services": 3,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 92,
@@ -38410,12 +38518,12 @@
       "Palestra",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.22,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -38850,7 +38958,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 93,
@@ -38861,12 +38970,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.0,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 2,
+      "quality": 3
     },
     "reviews": [
       {
@@ -39237,7 +39346,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 94,
@@ -39249,12 +39359,12 @@
       "TV in camera",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.04,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 2,
+      "quality": 3
     },
     "reviews": [
       {
@@ -39609,7 +39719,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 95,
@@ -39620,12 +39731,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.21,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -40060,7 +40171,8 @@
         "services": 5,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 96,
@@ -40071,12 +40183,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.16,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -40463,7 +40575,8 @@
         "services": 5,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 97,
@@ -40475,12 +40588,12 @@
       "Guida turistica",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.31,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -40835,7 +40948,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 98,
@@ -40846,12 +40960,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.74,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -41222,7 +41336,8 @@
         "services": 4,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 99,
@@ -41234,12 +41349,12 @@
       "Riscaldamento",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.47,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -41722,7 +41837,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 100,
@@ -41733,12 +41849,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.85,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -42125,7 +42241,8 @@
         "services": 2,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 101,
@@ -42137,12 +42254,12 @@
       "SPA",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 2.47,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -42561,7 +42678,8 @@
         "services": 4,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 102,
@@ -42573,12 +42691,12 @@
       "Guida turistica",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.29,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -43029,7 +43147,8 @@
         "services": 3,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 103,
@@ -43041,12 +43160,12 @@
       "Palestra",
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.58,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 2
     },
     "reviews": [
       {
@@ -43465,7 +43584,8 @@
         "services": 1,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 104,
@@ -43476,12 +43596,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.3,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -43868,23 +43988,24 @@
         "services": 1,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 105,
-    "name": "Hotel L'Aquila Paragonia",
+    "name": "Hotel L\u0027Aquila Paragonia",
     "description": "Un ridente hotel a Duffield Street, 30",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(936) 500-2944",
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.86,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -44223,7 +44344,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 106,
@@ -44234,12 +44356,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.05,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 2,
+      "services": 3,
+      "quality": 2
     },
     "reviews": [
       {
@@ -44626,7 +44748,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 107,
@@ -44638,12 +44761,12 @@
       "TV in camera",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.69,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -45062,7 +45185,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 108,
@@ -45073,12 +45197,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.6,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -45417,7 +45541,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 109,
@@ -45429,12 +45554,12 @@
       "Aria condizionata",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 2.96,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -45757,7 +45882,8 @@
         "services": 2,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 110,
@@ -45768,12 +45894,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.19,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 4,
+      "quality": 3
     },
     "reviews": [
       {
@@ -46144,7 +46270,8 @@
         "services": 4,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 111,
@@ -46156,12 +46283,12 @@
       "Cancellazione gratuita",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.69,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -46548,7 +46675,8 @@
         "services": 1,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 112,
@@ -46559,12 +46687,12 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.36,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -47031,7 +47159,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 113,
@@ -47042,12 +47171,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.6,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -47418,23 +47547,24 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 114,
-    "name": "Hotel L'Aquila Manglo",
+    "name": "Hotel L\u0027Aquila Manglo",
     "description": "Un ridente hotel a Neptune Avenue, 47",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(992) 498-3379",
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.27,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -47901,7 +48031,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 115,
@@ -47912,12 +48043,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.07,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -48384,24 +48515,25 @@
         "services": 3,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 116,
-    "name": "Hotel L'Aquila Isologics",
+    "name": "Hotel L\u0027Aquila Isologics",
     "description": "Un ridente hotel a Hendrickson Street, 12",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(944) 589-2374",
     "services": [
       "Guida turistica",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.13,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 2,
+      "quality": 3
     },
     "reviews": [
       {
@@ -48804,7 +48936,8 @@
         "services": 2,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 117,
@@ -48815,12 +48948,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.33,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -49271,24 +49404,25 @@
         "services": 3,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 118,
-    "name": "Hotel L'Aquila Vinch",
+    "name": "Hotel L\u0027Aquila Vinch",
     "description": "Un ridente hotel a Hubbard Place, 14",
-    "city": "L'Aquila",
+    "city": "L\u0027Aquila",
     "phone": "(819) 489-3212",
     "services": [
       "Guida turistica",
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.14,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -49739,7 +49873,8 @@
         "services": 5,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 119,
@@ -49751,12 +49886,12 @@
       "TV in camera",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.34,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -50143,7 +50278,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 120,
@@ -50155,12 +50291,12 @@
       "Aria condizionata",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.09,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -50627,7 +50763,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 121,
@@ -50638,12 +50775,12 @@
     "services": [
       "Piscina"
     ],
-    "rate": 0,
+    "rate": 3.24,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -51030,7 +51167,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 122,
@@ -51042,12 +51180,12 @@
       "Guida turistica",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 2.92,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -51450,7 +51588,8 @@
         "services": 3,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 123,
@@ -51462,12 +51601,12 @@
       "SPA",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.34,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -51870,7 +52009,8 @@
         "services": 1,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 124,
@@ -51882,12 +52022,12 @@
       "SPA",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.08,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -52306,7 +52446,8 @@
         "services": 4,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 125,
@@ -52318,12 +52459,12 @@
       "Riscaldamento",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 2.82,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -52646,7 +52787,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 126,
@@ -52658,12 +52800,12 @@
       "Palestra",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.55,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -53050,7 +53192,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 127,
@@ -53061,12 +53204,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 2.89,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 4,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -53453,7 +53596,8 @@
         "services": 5,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 128,
@@ -53465,12 +53609,12 @@
       "Palestra",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.55,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -53873,7 +54017,8 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 129,
@@ -53885,12 +54030,12 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 0,
+    "rate": 3.38,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -54244,8 +54389,25 @@
         "position": 1,
         "services": 1,
         "quality": 3
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 3,
+          "dayOfMonth": 22,
+          "hourOfDay": 20,
+          "minute": 34,
+          "second": 42
+        },
+        "rate": 4,
+        "cleaning": 5,
+        "position": 2,
+        "services": 5,
+        "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 130,
@@ -54256,12 +54418,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.54,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -54648,7 +54810,8 @@
         "services": 1,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 131,
@@ -54659,12 +54822,12 @@
     "services": [
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -55147,7 +55310,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 132,
@@ -55158,12 +55322,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.12,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -55582,7 +55746,8 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 133,
@@ -55593,12 +55758,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 2.84,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -55937,7 +56102,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 134,
@@ -55949,12 +56115,12 @@
       "SPA",
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.54,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -56389,7 +56555,8 @@
         "services": 2,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 135,
@@ -56401,12 +56568,12 @@
       "Riscaldamento",
       "SPA"
     ],
-    "rate": 0,
+    "rate": 2.54,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -56761,7 +56928,8 @@
         "services": 3,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 136,
@@ -56772,12 +56940,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -57244,7 +57412,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 137,
@@ -57255,12 +57424,12 @@
     "services": [
       "SPA"
     ],
-    "rate": 0,
+    "rate": 3.2,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -57743,7 +57912,8 @@
         "services": 5,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 138,
@@ -57754,12 +57924,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 2.94,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 2,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -58146,7 +58316,8 @@
         "services": 3,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 139,
@@ -58158,12 +58329,12 @@
       "Colazione",
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.23,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -58630,7 +58801,8 @@
         "services": 1,
         "quality": 1
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 140,
@@ -58641,12 +58813,12 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 4,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -58985,7 +59157,8 @@
         "services": 2,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 141,
@@ -58997,12 +59170,12 @@
       "Cancellazione gratuita",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -59389,7 +59562,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 142,
@@ -59401,12 +59575,12 @@
       "Guida turistica",
       "Palestra"
     ],
-    "rate": 0,
+    "rate": 3.12,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -59873,7 +60047,8 @@
         "services": 5,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 143,
@@ -59885,12 +60060,12 @@
       "Guida turistica",
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.12,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -60229,7 +60404,8 @@
         "services": 1,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 144,
@@ -60240,12 +60416,12 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 0,
+    "rate": 3.32,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -60712,7 +60888,8 @@
         "services": 2,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 145,
@@ -60723,12 +60900,12 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 3.47,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -61067,7 +61244,8 @@
         "services": 4,
         "quality": 4
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 146,
@@ -61078,12 +61256,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 2.98,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 4
     },
     "reviews": [
       {
@@ -61534,7 +61712,8 @@
         "services": 3,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 147,
@@ -61545,12 +61724,12 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 0,
+    "rate": 3.18,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -61937,7 +62116,8 @@
         "services": 4,
         "quality": 5
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 148,
@@ -61948,12 +62128,12 @@
     "services": [
       "Colazione"
     ],
-    "rate": 0,
+    "rate": 3.02,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -62404,7 +62584,8 @@
         "services": 2,
         "quality": 2
       }
-    ]
+    ],
+    "localRank": 0
   },
   {
     "id": 149,
@@ -62416,12 +62597,12 @@
       "Piscina",
       "Guida turistica"
     ],
-    "rate": 0,
+    "rate": 2.96,
     "ratings": {
-      "cleaning": 0,
-      "position": 0,
-      "services": 0,
-      "quality": 0
+      "cleaning": 3,
+      "position": 3,
+      "services": 3,
+      "quality": 3
     },
     "reviews": [
       {
@@ -62792,6 +62973,7 @@
         "services": 4,
         "quality": 3
       }
-    ]
+    ],
+    "localRank": 0
   }
 ]

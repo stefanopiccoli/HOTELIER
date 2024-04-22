@@ -43,9 +43,9 @@ public class Badge {
         this.badge = badgeType;
     }
 
-    public Badge(int value) {
+    public Badge(int nReviews) { //Costruttore per numero di recensioni
         for (BadgeType type : BadgeType.values()) {
-            if (value >= type.getBoundFrom() && value <= type.getBoundTo()) {
+            if (nReviews >= type.getBoundFrom() && nReviews <= type.getBoundTo()) {
                 this.badge = type;
                 break;
             }

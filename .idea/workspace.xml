@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Badge, UDPNotifier, printInfo Hotel with Badge initials, Updated json">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Cities.java" afterDir="false" />
+    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="LocalRankings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" afterDir="false" />
     </list>
@@ -218,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713381462995</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="LocalRankings">
+      <option name="closed" value="true" />
+      <created>1713713013424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713713013425</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,6 +263,7 @@
     <MESSAGE value="Reviews and PrintHotel update" />
     <MESSAGE value="Score formula" />
     <MESSAGE value="Badge, UDPNotifier, printInfo Hotel with Badge initials, Updated json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Badge, UDPNotifier, printInfo Hotel with Badge initials, Updated json" />
+    <MESSAGE value="LocalRankings" />
+    <option name="LAST_COMMIT_MESSAGE" value="LocalRankings" />
   </component>
 </project>

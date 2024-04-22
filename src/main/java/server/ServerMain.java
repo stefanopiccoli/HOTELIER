@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 import static utils.Cities.getCities;
 
 public class ServerMain implements Runnable {
-    private ArrayList<ConnectionHandler> connections;
+    private ArrayList<ConnectionHandler> connections; //Lista di tutti gli utenti connessi
     private ServerSocket server;
     private ExecutorService pool;
     private ArrayList<Hotel> hotels;
@@ -83,50 +83,63 @@ public class ServerMain implements Runnable {
                     out = new PrintWriter(client.getOutputStream(), true);
                     in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 //                    broadcast("user joined the chat...");
-                    if (user.isLogged())
-                        out.println(user.getUsername() + ", welcome to Hotelier!");
-                    else
-                        out.println("Welcome to Hotelier!");
                     if (!user.isLogged()) {
-                        out.println("1. Register");
-                        out.println("2. Login");
+                        out.println("Welcome to Hotelier!");
+                        out.println("/register - Register");
+                        out.println("/login - Log In");
+                        out.println("/search - Search Hotel");
+                        out.println("/searchall - Search all Hotels");
+                        out.println("/exit - Exit");
+                    } else {
+                        out.println(user.getUsername() + ", welcome to Hotelier!");
+                        out.println("/search - Search Hotel");
+                        out.println("/searchall - Search all Hotels");
+                        out.println("/review - Insert a Review");
+                        out.println("/logout - Logout");
+                        out.println("/exit - Exit");
+
                     }
-                    if (user.isLogged())
-                        out.println("3. Logout");
-                    out.println("4. Search hotel");
-                    out.println("5. Search all hotels");
-                    if (user.isLogged())
-                        out.println("6. Add review");
-                    out.println("0. Close");
 
                     choice = in.readLine();
                     switch (choice) {
-                        case "1":
+                        case "/register":
                             boolean done = false;
-                            while (!done) {
-                                out.println("REGISTER");
-                                out.println("Choose your username:");
-                                String username = in.readLine();
-                                out.println("Choose your password:");
-                                String password = in.readLine();
-                                done = register(username, password);
+                            if (!user.isLogged()) {
+                                while (!done) {
+                                    out.println("REGISTER");
+                                    out.println("Choose your username:");
+                                    String username = in.readLine();
+                                    out.println("Choose your password:");
+                                    String password = in.readLine();
+                                    done = register(username, password);
+                                }
+                            } else {
+                                out.println("Already registered with " + user.getUsername() + ".");
                             }
                             break;
-                        case "2":
+                        case "/login":
                             done = false;
-                            while (!done) {
-                                out.println("LOGIN");
-                                out.println("Choose your username:");
-                                String username = in.readLine();
-                                out.println("Choose your password:");
-                                String password = in.readLine();
-                                done = login(username, password);
+                            if (!user.isLogged()) {
+                                while (!done) {
+                                    out.println("LOGIN");
+                                    out.println("Choose your username:");
+                                    String username = in.readLine();
+                                    out.println("Choose your password:");
+                                    String password = in.readLine();
+                                    done = login(username, password);
+                                }
+                            } else {
+                                out.println("Already logged!");
                             }
                             break;
-                        case "3":
-                            logout();
+                        case "/logout":
+                            if (user.isLogged()) {
+                                logout();
+                            } else {
+                                out.println("You are not Logged In, try /login.");
+                            }
                             break;
-                        case "4":
+                        case "/search":
                             out.println("SEARCH HOTEL");
                             out.println("Search hotel name:");
                             String hotelName = in.readLine();
@@ -139,7 +152,7 @@ public class ServerMain implements Runnable {
                                 out.println(e.getMessage());
                             }
                             break;
-                        case "5":
+                        case "/searchall":
                             out.println("SEARCH ALL HOTEL");
                             out.println("Search hotel city:");
                             String hotelsCity = in.readLine();
@@ -152,37 +165,50 @@ public class ServerMain implements Runnable {
                                 out.println(e.getMessage());
                             }
                             break;
-                        case "6":
+                        case "/review":
                             Hotel found = null;
-                            out.println("SEARCH HOTEL");
-                            try {
-                                do {
-                                    out.println("Search hotel name:");
-                                    hotelName = in.readLine();
-                                    out.println("Search hotel city:");
-                                    hotelCity = in.readLine();
-                                    found = searchHotel(hotelName, hotelCity);
-                                    out.println(found.printInfo(userBadges));
-                                    out.println("Do you want to insert a review on this hotel? Y/n");
-                                } while (!Objects.equals(in.readLine(), "Y"));
-                                done = false;
-                                do {
-                                    Review userReview = new Review(user.getUsername(), -1, -1, -1, -1, -1);
-                                    out.println("Rate:");
-                                    userReview.setRate(Integer.parseInt(in.readLine()));
-                                    out.println("Cleaning:");
-                                    userReview.setCleaning(Integer.parseInt(in.readLine()));
-                                    out.println("Position:");
-                                    userReview.setPosition(Integer.parseInt(in.readLine()));
-                                    out.println("Services:");
-                                    userReview.setServices(Integer.parseInt(in.readLine()));
-                                    out.println("Quality:");
-                                    userReview.setQuality(Integer.parseInt(in.readLine()));
-                                    out.println(userReview.getRate());
-                                    done = insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
-                                } while (!done);
-                            } catch (NullPointerException e) {
-                                out.println(e.getMessage());
+                            if (user.isLogged()) {
+                                out.println("SEARCH HOTEL");
+                                try {
+                                    do {
+                                        out.println("Search hotel name:");
+                                        hotelName = in.readLine();
+                                        out.println("Search hotel city:");
+                                        hotelCity = in.readLine();
+                                        found = searchHotel(hotelName, hotelCity);
+                                        out.println(found.printInfo(userBadges));
+                                        out.println("Do you want to insert a review on this hotel? Y/n");
+                                    } while (!Objects.equals(in.readLine(), "Y"));
+                                    done = false;
+                                    do {
+                                        Review userReview = new Review(user.getUsername(), -1, -1, -1, -1, -1);
+                                        out.println("Rate:");
+                                        userReview.setRate(Integer.parseInt(in.readLine()));
+                                        out.println("Cleaning:");
+                                        userReview.setCleaning(Integer.parseInt(in.readLine()));
+                                        out.println("Position:");
+                                        userReview.setPosition(Integer.parseInt(in.readLine()));
+                                        out.println("Services:");
+                                        userReview.setServices(Integer.parseInt(in.readLine()));
+                                        out.println("Quality:");
+                                        userReview.setQuality(Integer.parseInt(in.readLine()));
+                                        out.println(userReview.getRate());
+                                        done = insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
+                                    } while (!done);
+                                } catch (NullPointerException e) {
+                                    out.println(e.getMessage());
+                                }
+                            } else{
+                                out.println("You are not Logged In, try /login.");
+                            }
+                                break;
+                        case "/badge":
+                            if (user.isLogged()){
+                                Badge badge = showMyBadge();
+                                out.println("BADGE:");
+                                out.println(user.getUsername()+" : "+badge.getBadge() + " ("+badge.getInitials()+")");
+                            }else {
+                                out.println("You are not Logged In, try /login.");
                             }
                             break;
                         case "7":
@@ -322,6 +348,15 @@ public class ServerMain implements Runnable {
             }
             out.println("Ratings must be between 1 and 10!");
             return false;
+        }
+
+        private Badge showMyBadge(){
+            if (userBadges.containsKey(user.getUsername())) {
+                return userBadges.get(user.getUsername());
+            }else {
+                return new Badge(0); //Il badge non è ancora stato inserito
+            }
+
         }
 
         public void shutdown() {

@@ -165,7 +165,10 @@ public class Hotel {
         result.append("+").append("-".repeat(lineLength)).append("+\n");
         result.append("| Reviews: ").append(" ".repeat(lineLength - 10)).append("|\n");
         for (Review review : this.reviews) {
-            result.append(String.format("| (%-2s) - %-15s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n",userBadges.get(review.getUsername()).getInitials(), review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
+            Badge badge = new Badge(0); //Inizializzazione a un badge vuoto in caso di nuovi utenti
+            if (userBadges.containsKey(review.getUsername()))
+                badge = userBadges.get(review.getUsername()); //Badge già esistente
+            result.append(String.format("| (%-2s) - %-15s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n",badge.getInitials(), review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
         }
         result.append("+").append("-".repeat(lineLength)).append("+\n");
 
