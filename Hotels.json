@@ -689,7 +689,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.74,
+    "rate": 2.86,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -1016,6 +1016,22 @@
         "position": 4,
         "services": 2,
         "quality": 4
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 20,
+          "minute": 25,
+          "second": 8
+        },
+        "rate": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
       }
     ],
     "localRank": 0
@@ -1513,7 +1529,7 @@
     "services": [
       "Piscina"
     ],
-    "rate": 2.64,
+    "rate": 2.63,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -1854,7 +1870,7 @@
       "Piscina",
       "Guida turistica"
     ],
-    "rate": 3.47,
+    "rate": 3.46,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -9014,7 +9030,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 3.1,
+    "rate": 3.09,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -13351,7 +13367,7 @@
       "Aria condizionata",
       "Colazione"
     ],
-    "rate": 3.08,
+    "rate": 3.07,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -19206,7 +19222,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.98,
+    "rate": 2.97,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -19578,7 +19594,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 3.35,
+    "rate": 3.34,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -21777,7 +21793,7 @@
       "TV in camera",
       "TV in camera"
     ],
-    "rate": 3.2,
+    "rate": 3.19,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -22278,7 +22294,7 @@
       "Colazione",
       "SPA"
     ],
-    "rate": 3.8,
+    "rate": 3.79,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -24723,7 +24739,7 @@
       "Colazione",
       "Guida turistica"
     ],
-    "rate": 3.44,
+    "rate": 3.43,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -25159,7 +25175,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 3.29,
+    "rate": 3.28,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -26015,7 +26031,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 3.34,
+    "rate": 3.33,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -28052,7 +28068,7 @@
       "TV in camera",
       "Riscaldamento"
     ],
-    "rate": 3.48,
+    "rate": 3.47,
     "ratings": {
       "cleaning": 3,
       "position": 2,
@@ -28505,7 +28521,7 @@
       "Riscaldamento",
       "Colazione"
     ],
-    "rate": 2.95,
+    "rate": 2.94,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -30949,7 +30965,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.89,
+    "rate": 2.88,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -32242,7 +32258,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 3.34,
+    "rate": 3.27,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -32696,6 +32712,22 @@
         "cleaning": 3,
         "position": 3,
         "services": 2,
+        "quality": 1
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 20,
+          "minute": 59,
+          "second": 10
+        },
+        "rate": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
         "quality": 1
       }
     ],
@@ -37303,7 +37335,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 3.21,
+    "rate": 3.2,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -39359,7 +39391,7 @@
       "TV in camera",
       "Aria condizionata"
     ],
-    "rate": 3.04,
+    "rate": 3.03,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -40588,7 +40620,7 @@
       "Guida turistica",
       "SPA"
     ],
-    "rate": 3.31,
+    "rate": 3.3,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -42691,7 +42723,7 @@
       "Guida turistica",
       "Cancellazione gratuita"
     ],
-    "rate": 3.29,
+    "rate": 3.28,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -43596,7 +43628,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 3.3,
+    "rate": 3.29,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -44356,7 +44388,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 3.05,
+    "rate": 3.04,
     "ratings": {
       "cleaning": 3,
       "position": 2,
@@ -47171,7 +47203,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 3.6,
+    "rate": 3.59,
     "ratings": {
       "cleaning": 3,
       "position": 4,
@@ -48948,7 +48980,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 3.33,
+    "rate": 3.32,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -54030,7 +54062,7 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 3.38,
+    "rate": 3.37,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -55758,7 +55790,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.84,
+    "rate": 2.83,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -56940,7 +56972,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 3.18,
+    "rate": 3.25,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -57411,6 +57443,102 @@
         "position": 5,
         "services": 2,
         "quality": 4
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 20,
+          "minute": 43,
+          "second": 4
+        },
+        "rate": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 20,
+          "minute": 58,
+          "second": 30
+        },
+        "rate": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 21,
+          "minute": 0,
+          "second": 47
+        },
+        "rate": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 21,
+          "minute": 1,
+          "second": 17
+        },
+        "rate": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 21,
+          "minute": 10,
+          "second": 52
+        },
+        "rate": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 2,
+          "hourOfDay": 21,
+          "minute": 17,
+          "second": 9
+        },
+        "rate": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
       }
     ],
     "localRank": 0
@@ -57424,7 +57552,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 3.2,
+    "rate": 3.19,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -60060,7 +60188,7 @@
       "Guida turistica",
       "Colazione"
     ],
-    "rate": 3.12,
+    "rate": 3.11,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -60900,7 +61028,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 3.47,
+    "rate": 3.46,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -61724,7 +61852,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 3.18,
+    "rate": 3.17,
     "ratings": {
       "cleaning": 3,
       "position": 3,

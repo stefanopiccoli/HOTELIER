@@ -12,9 +12,7 @@ import server.entities.User;
 import java.io.*;
 import java.net.*;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 import static utils.Cities.getCities;
 
@@ -22,12 +20,13 @@ public class ServerMain implements Runnable {
     private ArrayList<ConnectionHandler> connections; //Lista di tutti gli utenti connessi
     private ServerSocket server;
     private ExecutorService pool;
+    private ScheduledExecutorService scheduledPool;//TODO: OK?
     private ArrayList<Hotel> hotels;
     private ArrayList<User> users;
     private Map<String, Badge> userBadges;
-    private Map<String, ArrayList<Hotel>> localRankings;
-    private final Object lock = new Object(); //TODO: eliminare e usare this nei synchronized
-    private boolean rankingsChanged = false;
+    private final Map<String, ArrayList<Hotel>> localRankings = new ConcurrentHashMap<>();
+    //private final Object lock = new Object(); TODO: eliminare e usare this nei synchronized
+    //private boolean rankingsChanged = false; TODO: eliminare
     private static final int TCP_PORT = 9999; // Porta TCP per accettare le connessioni dei client
     private static final int UDP_PORT = 8888; // Porta UDP per inviare le notifiche ai client
     private static final String MULTICAST_GROUP = "230.0.0.0";
@@ -49,6 +48,8 @@ public class ServerMain implements Runnable {
             init();
             server = new ServerSocket(TCP_PORT);
             pool = Executors.newCachedThreadPool();
+            scheduledPool = Executors.newScheduledThreadPool(1);
+            scheduledPool.scheduleAtFixedRate(new UDPNotifier(), 15, 15, TimeUnit.SECONDS);
             while (true) {
                 Socket client = server.accept();
                 ConnectionHandler handler = new ConnectionHandler(client);
@@ -76,8 +77,6 @@ public class ServerMain implements Runnable {
         @Override
         public void run() {
             user = new User();
-            Thread udpThread = new Thread(new UDPNotifier());
-            udpThread.start();
             try {
                 do {
                     out = new PrintWriter(client.getOutputStream(), true);
@@ -89,12 +88,14 @@ public class ServerMain implements Runnable {
                         out.println("/login - Log In");
                         out.println("/search - Search Hotel");
                         out.println("/searchall - Search all Hotels");
+                        out.println("/rankings - Show rankings by city");
                         out.println("/exit - Exit");
                     } else {
                         out.println(user.getUsername() + ", welcome to Hotelier!");
                         out.println("/search - Search Hotel");
                         out.println("/searchall - Search all Hotels");
                         out.println("/review - Insert a Review");
+                        out.println("/rankings - Show rankings by city");
                         out.println("/logout - Logout");
                         out.println("/exit - Exit");
 
@@ -198,18 +199,34 @@ public class ServerMain implements Runnable {
                                 } catch (NullPointerException e) {
                                     out.println(e.getMessage());
                                 }
-                            } else{
+                            } else {
                                 out.println("You are not Logged In, try /login.");
                             }
-                                break;
+                            break;
                         case "/badge":
-                            if (user.isLogged()){
+                            if (user.isLogged()) {
                                 Badge badge = showMyBadge();
                                 out.println("BADGE:");
-                                out.println(user.getUsername()+" : "+badge.getBadge() + " ("+badge.getInitials()+")");
-                            }else {
+                                out.println(user.getUsername() + " : " + badge.getBadge() + " (" + badge.getInitials() + ")");
+                            } else {
                                 out.println("You are not Logged In, try /login.");
                             }
+                            break;
+                        case "/rankings":
+                            out.println("RANKINGS");
+                            out.println("Select city:");
+                            String city = in.readLine();
+                            for (String key : localRankings.keySet()) {
+                                int position = 1;
+                                if (key.toLowerCase().contains(city.toLowerCase())) {
+                                    for (Hotel h : localRankings.get(key)) {
+                                        out.println(position + ". " + h.getName() + " (" + h.getRate() + ")");
+                                        position++;
+                                    }
+                                    break;
+                                }
+                            }
+
                             break;
                         case "7":
                             for (Hotel h : hotels) {
@@ -222,13 +239,6 @@ public class ServerMain implements Runnable {
                             writer.close();
                             out.println("DONE");
 //                            TODO: DELETE
-                            break;
-
-                        case "8":
-                            synchronized (lock) {
-                                rankingsChanged = true;
-                                lock.notify();
-                            }
                             break;
                         case "9":
                             loadUserBadges();
@@ -350,10 +360,10 @@ public class ServerMain implements Runnable {
             return false;
         }
 
-        private Badge showMyBadge(){
+        private Badge showMyBadge() {
             if (userBadges.containsKey(user.getUsername())) {
                 return userBadges.get(user.getUsername());
-            }else {
+            } else {
                 return new Badge(0); //Il badge non è ancora stato inserito
             }
 
@@ -377,30 +387,50 @@ public class ServerMain implements Runnable {
 
     private class UDPNotifier implements Runnable {
         @Override
-        public void run() {
-            try {
-                InetAddress multicastGroup = InetAddress.getByName(MULTICAST_GROUP);
-                try (MulticastSocket socket = new MulticastSocket()) {
-                    while (true) {
-                        synchronized (lock) {
-                            // Attendere finché non ci sono cambiamenti nei ranking degli hotel
-                            while (!rankingsChanged) {
-                                lock.wait();
-                            }
-                            String message = "New hotels rank available!";
-                            byte[] buffer = message.getBytes();
+        public synchronized void run() {
+            synchronized (localRankings) {
+                Map<String, ArrayList<Hotel>> oldLocalRankings = new HashMap<>(localRankings);
+                calculateLocalRankings();
+                Map<String, Hotel> changedRankings = new HashMap<>();
 
-                            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, UDP_PORT);
-                            socket.send(packet);
-                            System.out.println("Notification sent to clients: " + message);
-
-                            // Resetta la variabile di controllo
-                            rankingsChanged = false;
-                        }
+                //Inserisco in changedRankings tutti gli hotel che sono passati in prima posizione
+                for (String city : oldLocalRankings.keySet()) {
+                    Hotel firstOld = oldLocalRankings.get(city).get(0);//TODO: check not null
+                    Hotel firstNew = localRankings.get(city).get(0);//TODO: check not null
+                    if (!firstOld.getName().equals(firstNew.getName())) {
+                        changedRankings.putIfAbsent(city, firstNew);
+                    }else {
+                        System.out.print(oldLocalRankings.get("Aosta").get(0).getName()+" = "+localRankings.get("Aosta").get(0).getName()+"\n");
                     }
                 }
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
+
+
+                try {
+                    //TODO: comment
+                    InetAddress multicastGroup = InetAddress.getByName(MULTICAST_GROUP);
+                    try (MulticastSocket socket = new MulticastSocket()) {
+                        //Creazione del messaggio
+                        String message = "";
+                        if (changedRankings.isEmpty()) {
+                            message = "Rankings updated! Nothing changed.\n";
+                        } else {
+                            message = "New hotels rank available: \n";
+                            for (Hotel h : changedRankings.values()) {
+                                message = message.concat(h.getName() + " is now first!\n");
+                            }
+                        }
+
+                        byte[] buffer = message.getBytes();
+
+                        DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, UDP_PORT);
+                        socket.send(packet);
+                        //System.out.println("Notification sent to clients: " + message); TODO: Remove
+
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
         }
     }
@@ -432,13 +462,14 @@ public class ServerMain implements Runnable {
     public void loadUserBadges() {
         userBadges = new ConcurrentHashMap<>();
         Map<String, Integer> nReviews = new HashMap<>();
+        //Creazione map con username -> numero di recensioni per ogni utente che ha scritto almeno una recensione
         for (Hotel h : hotels)
             for (Review r : h.getReviews())
                 if (nReviews.containsKey(r.getUsername()))
                     nReviews.put(r.getUsername(), nReviews.get(r.getUsername()) + 1);
                 else
                     nReviews.putIfAbsent(r.getUsername(), 1);
-
+        //Associazione per ogni utente in nReviews del badge, costruito da numero di recensioni effettuate
         for (Map.Entry<String, Integer> entry : nReviews.entrySet()) {
             userBadges.putIfAbsent(entry.getKey(), new Badge(entry.getValue()));
 //            System.out.println("Chiave: " + entry.getKey() + ", Valore: " + entry.getValue() + ", Badge: " + userBadges.get(entry.getKey()).getBadge()); TODO: remove
@@ -446,18 +477,19 @@ public class ServerMain implements Runnable {
     }
 
     public void calculateLocalRankings() {
-        localRankings = new ConcurrentHashMap<>();
+        //Creazione map con città -> Array di hotel presenti in essa
+        localRankings.clear();
         for (String c : getCities()) {
-            localRankings.putIfAbsent(c, new ArrayList<Hotel>());
+            localRankings.put(c, new ArrayList<Hotel>());
         }
-
-        // Definizione di un Comparator personalizzato per ordinare gli hotel per localRank
-        Comparator<Hotel> rankComparator = Comparator.comparingDouble(Hotel::getRate).reversed();
-
         for (Hotel h : hotels) {
             localRankings.get(h.getCity()).add(h);
         }
 
+        // Definizione di un Comparator personalizzato per ordinare gli hotel per localRank in ordine decrescente
+        Comparator<Hotel> rankComparator = Comparator.comparingDouble(Hotel::getRate).reversed();
+
+        //Ordinamento decrescente degli hotel di ogni città
         for (ArrayList<Hotel> hotels : localRankings.values()) {
             hotels.sort(rankComparator);
             for (Hotel h : hotels)

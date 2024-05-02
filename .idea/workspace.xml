@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="LocalRankings">
+    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="ShowMyBadge e fix Badge, new /commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RMI/RemoteInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/RMI/RemoteServer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/Hotel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,7 @@
       <recent name="C:\Users\stefa\IdeaProjects\HOTELIER" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientMain (1)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="HOTELIER" />
@@ -227,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713713013425</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ShowMyBadge e fix Badge, new /commands">
+      <option name="closed" value="true" />
+      <created>1713812356408</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713812356409</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +272,7 @@
     <MESSAGE value="Score formula" />
     <MESSAGE value="Badge, UDPNotifier, printInfo Hotel with Badge initials, Updated json" />
     <MESSAGE value="LocalRankings" />
-    <option name="LAST_COMMIT_MESSAGE" value="LocalRankings" />
+    <MESSAGE value="ShowMyBadge e fix Badge, new /commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="ShowMyBadge e fix Badge, new /commands" />
   </component>
 </project>
