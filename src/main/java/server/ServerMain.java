@@ -49,7 +49,7 @@ public class ServerMain implements Runnable {
             server = new ServerSocket(TCP_PORT);
             pool = Executors.newCachedThreadPool();
             scheduledPool = Executors.newScheduledThreadPool(1);
-            scheduledPool.scheduleAtFixedRate(new UDPNotifier(), 15, 15, TimeUnit.SECONDS);
+            scheduledPool.scheduleAtFixedRate(new UDPNotifier(), 60, 60, TimeUnit.SECONDS);
             while (true) {
                 Socket client = server.accept();
                 ConnectionHandler handler = new ConnectionHandler(client);
@@ -95,6 +95,7 @@ public class ServerMain implements Runnable {
                         out.println("/search - Search Hotel");
                         out.println("/searchall - Search all Hotels");
                         out.println("/review - Insert a Review");
+                        out.println("/badge - Show my top badge");
                         out.println("/rankings - Show rankings by city");
                         out.println("/logout - Logout");
                         out.println("/exit - Exit");
@@ -184,7 +185,7 @@ public class ServerMain implements Runnable {
                                     do {
                                         Review userReview = new Review(user.getUsername(), -1, -1, -1, -1, -1);
                                         out.println("Rate:");
-                                        userReview.setRate(Integer.parseInt(in.readLine()));
+                                        userReview.setGlobalScore(Integer.parseInt(in.readLine()));
                                         out.println("Cleaning:");
                                         userReview.setCleaning(Integer.parseInt(in.readLine()));
                                         out.println("Position:");
@@ -193,8 +194,8 @@ public class ServerMain implements Runnable {
                                         userReview.setServices(Integer.parseInt(in.readLine()));
                                         out.println("Quality:");
                                         userReview.setQuality(Integer.parseInt(in.readLine()));
-                                        out.println(userReview.getRate());
-                                        done = insertReview(found.getId(), userReview.getRate(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
+                                        out.println(userReview.getGlobalScore());
+                                        done = insertReview(found.getId(), userReview.getGlobalScore(), new ArrayList<Integer>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
                                     } while (!done);
                                 } catch (NullPointerException e) {
                                     out.println(e.getMessage());

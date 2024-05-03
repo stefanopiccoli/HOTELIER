@@ -1,10 +1,7 @@
 package server.entities;
 
-import server.ServerMain;
-
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -108,26 +105,32 @@ public class Hotel {
     }
 
     public void calculateRate() {
+        final double TIME_WEIGHT = -0.0005;
+        final double MAX_REVIEW = 100;
         double totalWeightedScore = 0;
         double cleaning = 0.0;
         double position = 0.0;
         double services = 0.0;
         double quality = 0.0;
         int reviewsSize = this.reviews.size();
+        //Inizializzazione alla data attuale
         Calendar endDate = Calendar.getInstance();
+
         for (Review r : this.reviews) {
-            double deltaTime = TimeUnit.MILLISECONDS.toDays(Math.abs((endDate.getTimeInMillis() - r.getDate().getTimeInMillis())));
-            double dataWeight = Math.exp(-0.00009 * deltaTime);
-            double weightedScore = r.getRate() * dataWeight;
-            totalWeightedScore += weightedScore;
+            double deltaTime = TimeUnit.MILLISECONDS.toDays(Math.abs((endDate.getTimeInMillis() - r.getDate().getTimeInMillis()))); //Differenza in giorni dalla giornata attuale alla data della recensione
+            double weightedDelta = Math.exp(TIME_WEIGHT * deltaTime); //Data pesata, (1 >= weightedDelta >= 0)
+            double weightedScore = r.getGlobalScore() * weightedDelta; //Voto pesato per attualità, (1<= weightedScore <= 5)
+            totalWeightedScore += weightedScore; //Somma di tutte le recensioni pesate per attualità
             cleaning+=r.getCleaning();
             position+=r.getPosition();
             services+=r.getServices();
             quality+=r.getQuality();
         }
-        double sizeWeight = reviewsSize / 100.0;
-        double rate = (totalWeightedScore / reviewsSize) * 1 + sizeWeight;
-        this.rate = Math.round(rate * 100.0) / 100.0;
+        double sizeWeight = reviewsSize / MAX_REVIEW;
+        double rate = (totalWeightedScore / reviewsSize) + sizeWeight; //Media dei voti sommata al premio delle quantità di recensioni
+        if (rate>5.00) rate = 5.00; //Nel caso viene superato il punteggio massimo di 5 verrà mostrato 5, anche se il teorico sará più elevato e solido (più difficile da abbassare rispetto a un 5 reale)
+
+        this.rate = Math.round(rate * 100.0) / 100.0; //Arrotondamento alla seconda cifra dopo la virgola
         this.ratings.put("cleaning",(int)Math.round(cleaning/reviewsSize));
         this.ratings.put("position",(int)Math.round(position/reviewsSize));
         this.ratings.put("services",(int)Math.round(services/reviewsSize));
@@ -168,7 +171,7 @@ public class Hotel {
             Badge badge = new Badge(0); //Inizializzazione a un badge vuoto in caso di nuovi utenti
             if (userBadges.containsKey(review.getUsername()))
                 badge = userBadges.get(review.getUsername()); //Badge già esistente
-            result.append(String.format("| (%-2s) - %-15s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n",badge.getInitials(), review.getUsername(), review.getRate(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
+            result.append(String.format("| (%-2s) - %-15s:  %-1s  ( C:%-1s | P:%-1s | S:%-1s | Q:%-1s )   -   %-13s |\n",badge.getInitials(), review.getUsername(), review.getGlobalScore(), review.getCleaning(), review.getPosition(), review.getServices(), review.getQuality(), new SimpleDateFormat("dd/MM/yyyy").format(review.getDate().getTime())));
         }
         result.append("+").append("-".repeat(lineLength)).append("+\n");
 

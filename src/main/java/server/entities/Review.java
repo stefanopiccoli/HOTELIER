@@ -1,15 +1,11 @@
 package server.entities;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Review {
     private String username;
     private Calendar date;
-    private int rate;
+    private int globalScore;
     private int cleaning;
     private int position;
     private int services;
@@ -20,10 +16,10 @@ public class Review {
     }
 
 
-    public Review(String username, int rate, int cleaning, int position, int services, int quality) {
+    public Review(String username, int globalScore, int cleaning, int position, int services, int quality) {
         this.username = username;
         this.date = Calendar.getInstance();
-        this.rate = rate;
+        this.globalScore = globalScore;
         this.cleaning = cleaning;
         this.position = position;
         this.services = services;
@@ -38,8 +34,8 @@ public class Review {
         this.username = username;
     }
 
-    public int getRate() {
-        return rate;
+    public int getGlobalScore() {
+        return globalScore;
     }
 
     public int getCleaning() {
@@ -58,8 +54,8 @@ public class Review {
         return quality;
     }
 
-    public void setRate(int rate) {
-        this.rate = rate;
+    public void setGlobalScore(int globalScore) {
+        this.globalScore = globalScore;
     }
 
     public void setCleaning(int cleaning) {

@@ -44,7 +44,7 @@
           minute: '{{integer(1,59)}}',
           second: '{{integer(1,59)}}'
         },
-        rate: '{{integer(1,5)}}',
+        globalScore: '{{integer(1,5)}}',
         cleaning: '{{integer(1,5)}}',
         position: '{{integer(1,5)}}',
         services: '{{integer(1,5)}}',
