@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class Review {
     private String username;
-    private Calendar date;
+    private final Calendar date;
     private int globalScore;
     private int cleaning;
     private int position;

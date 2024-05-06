@@ -15,7 +15,6 @@ public class Hotel {
     private double rate;
     private Map<String, Integer> ratings;
     private ArrayList<Review> reviews;
-    private int localRank;
 
     public int getId() {
         return id;

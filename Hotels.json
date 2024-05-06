@@ -8,7 +8,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.77,
+    "rate": 2.76,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -432,8 +432,7 @@
         "services": 5,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 1,
@@ -820,8 +819,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 2,
@@ -1241,8 +1239,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 3,
@@ -1253,7 +1250,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.41,
+    "rate": 2.4,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -1693,8 +1690,7 @@
         "services": 3,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 4,
@@ -2034,8 +2030,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 5,
@@ -2406,8 +2401,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 6,
@@ -2891,8 +2885,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 7,
@@ -2903,7 +2896,7 @@
     "services": [
       "Piscina"
     ],
-    "rate": 2.1,
+    "rate": 2.09,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -3295,8 +3288,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 8,
@@ -3763,8 +3755,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 9,
@@ -3775,7 +3766,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.55,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -4231,8 +4222,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 10,
@@ -4244,7 +4234,7 @@
       "TV in camera",
       "Colazione"
     ],
-    "rate": 2.7,
+    "rate": 2.69,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -4652,8 +4642,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 11,
@@ -5073,8 +5062,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 12,
@@ -5558,8 +5546,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 13,
@@ -5962,8 +5949,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 14,
@@ -5974,7 +5960,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.71,
+    "rate": 2.7,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -6350,8 +6336,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 15,
@@ -6723,8 +6708,7 @@
         "services": 4,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 16,
@@ -7207,8 +7191,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 17,
@@ -7595,8 +7578,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 18,
@@ -8015,8 +7997,7 @@
         "services": 3,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 19,
@@ -8027,7 +8008,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.95,
+    "rate": 2.8,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -8434,9 +8415,56 @@
         "position": 2,
         "services": 2,
         "quality": 5
+      },
+      {
+        "username": "mago candido",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 5,
+          "hourOfDay": 11,
+          "minute": 8,
+          "second": 54
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "mago candido",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 5,
+          "hourOfDay": 11,
+          "minute": 9,
+          "second": 40
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "mago candido",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 5,
+          "hourOfDay": 11,
+          "minute": 10,
+          "second": 10
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 20,
@@ -8855,8 +8883,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 21,
@@ -8867,7 +8894,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.1,
+    "rate": 2.09,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -9195,8 +9222,7 @@
         "services": 2,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 22,
@@ -9679,8 +9705,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 23,
@@ -10179,8 +10204,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 24,
@@ -10615,8 +10639,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 25,
@@ -11099,8 +11122,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 26,
@@ -11552,8 +11574,7 @@
         "services": 4,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 27,
@@ -11565,7 +11586,7 @@
       "Palestra",
       "Aria condizionata"
     ],
-    "rate": 2.43,
+    "rate": 2.42,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -11957,8 +11978,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 28,
@@ -12298,8 +12318,7 @@
         "services": 2,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 29,
@@ -12671,8 +12690,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 30,
@@ -13091,8 +13109,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 31,
@@ -13528,8 +13545,7 @@
         "services": 4,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 32,
@@ -13965,8 +13981,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 33,
@@ -14434,8 +14449,7 @@
         "services": 4,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 34,
@@ -14887,8 +14901,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 35,
@@ -14900,7 +14913,7 @@
       "SPA",
       "Piscina"
     ],
-    "rate": 2.22,
+    "rate": 2.21,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -15372,8 +15385,7 @@
         "services": 3,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 36,
@@ -15713,8 +15725,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 37,
@@ -16054,8 +16065,7 @@
         "services": 3,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 38,
@@ -16395,8 +16405,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 39,
@@ -16880,8 +16889,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 40,
@@ -17333,8 +17341,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 41,
@@ -17802,8 +17809,7 @@
         "services": 1,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 42,
@@ -18207,8 +18213,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 43,
@@ -18596,8 +18601,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 44,
@@ -19033,8 +19037,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 45,
@@ -19517,8 +19520,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 46,
@@ -19985,8 +19987,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 47,
@@ -20438,8 +20439,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 48,
@@ -20907,8 +20907,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 49,
@@ -20920,7 +20919,7 @@
       "Palestra",
       "Cancellazione gratuita"
     ],
-    "rate": 2.36,
+    "rate": 2.35,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -21296,8 +21295,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 50,
@@ -21700,8 +21698,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 51,
@@ -21712,7 +21709,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.47,
+    "rate": 2.46,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -22136,8 +22133,7 @@
         "services": 3,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 52,
@@ -22621,8 +22617,7 @@
         "services": 3,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 53,
@@ -22978,8 +22973,7 @@
         "services": 2,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 54,
@@ -22991,7 +22985,7 @@
       "Guida turistica",
       "Guida turistica"
     ],
-    "rate": 2.47,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -23478,9 +23472,40 @@
         "position": 5,
         "services": 5,
         "quality": 5
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 6,
+          "hourOfDay": 18,
+          "minute": 31,
+          "second": 11
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 6,
+          "hourOfDay": 22,
+          "minute": 35,
+          "second": 29
+        },
+        "globalScore": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 55,
@@ -23883,8 +23908,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 56,
@@ -24383,8 +24407,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 57,
@@ -24820,8 +24843,7 @@
         "services": 4,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 58,
@@ -25272,8 +25294,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 59,
@@ -25644,8 +25665,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 60,
@@ -25657,7 +25677,7 @@
       "Colazione",
       "Colazione"
     ],
-    "rate": 2.45,
+    "rate": 2.44,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -25985,8 +26005,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 61,
@@ -26421,8 +26440,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 62,
@@ -26874,8 +26892,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 63,
@@ -27214,8 +27231,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 64,
@@ -27635,8 +27651,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 65,
@@ -28007,8 +28022,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 66,
@@ -28019,7 +28033,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.27,
+    "rate": 2.26,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -28491,8 +28505,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 67,
@@ -28960,8 +28973,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 68,
@@ -29460,8 +29472,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 69,
@@ -29833,8 +29844,7 @@
         "services": 5,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 70,
@@ -30333,8 +30343,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 71,
@@ -30738,8 +30747,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 72,
@@ -30751,7 +30759,7 @@
       "SPA",
       "TV in camera"
     ],
-    "rate": 2.71,
+    "rate": 2.7,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -31095,8 +31103,7 @@
         "services": 1,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 73,
@@ -31468,8 +31475,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 74,
@@ -31480,7 +31486,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.28,
+    "rate": 2.27,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -31936,8 +31942,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 75,
@@ -32437,8 +32442,7 @@
         "services": 3,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 76,
@@ -32793,8 +32797,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 77,
@@ -33149,8 +33152,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 78,
@@ -33161,7 +33163,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 3.22,
+    "rate": 3.21,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -33617,8 +33619,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 79,
@@ -34085,8 +34086,7 @@
         "services": 4,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 80,
@@ -34098,7 +34098,7 @@
       "TV in camera",
       "Aria condizionata"
     ],
-    "rate": 2.2,
+    "rate": 2.19,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -34458,8 +34458,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 81,
@@ -34862,8 +34861,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 82,
@@ -35203,8 +35201,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 83,
@@ -35215,7 +35212,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.74,
+    "rate": 2.73,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -35671,8 +35668,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 84,
@@ -35684,7 +35680,7 @@
       "Piscina",
       "TV in camera"
     ],
-    "rate": 2.37,
+    "rate": 2.36,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -36012,8 +36008,7 @@
         "services": 5,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 85,
@@ -36024,7 +36019,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.55,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -36384,8 +36379,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 86,
@@ -36396,7 +36390,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.4,
+    "rate": 2.39,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -36836,8 +36830,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 87,
@@ -37289,8 +37282,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 88,
@@ -37741,8 +37733,7 @@
         "services": 1,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 89,
@@ -38226,8 +38217,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 90,
@@ -38599,8 +38589,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 91,
@@ -38611,7 +38600,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.38,
+    "rate": 2.37,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -38939,8 +38928,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 92,
@@ -39328,8 +39316,7 @@
         "services": 2,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 93,
@@ -39829,8 +39816,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 94,
@@ -39841,7 +39827,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.64,
+    "rate": 2.63,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -40313,8 +40299,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 95,
@@ -40685,8 +40670,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 96,
@@ -41026,8 +41010,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 97,
@@ -41398,8 +41381,7 @@
         "services": 3,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 98,
@@ -41898,8 +41880,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 99,
@@ -42366,8 +42347,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 100,
@@ -42754,8 +42734,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 101,
@@ -43222,8 +43201,7 @@
         "services": 3,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 102,
@@ -43707,8 +43685,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 103,
@@ -43719,7 +43696,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.68,
+    "rate": 2.67,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -44079,8 +44056,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 104,
@@ -44091,7 +44067,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.36,
+    "rate": 2.35,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -44563,8 +44539,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 105,
@@ -45063,8 +45038,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 106,
@@ -45436,8 +45410,7 @@
         "services": 3,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 107,
@@ -45904,8 +45877,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 108,
@@ -46340,8 +46312,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 109,
@@ -46729,8 +46700,7 @@
         "services": 2,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 110,
@@ -46741,7 +46711,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.35,
+    "rate": 2.34,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -47213,8 +47183,7 @@
         "services": 5,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 111,
@@ -47570,8 +47539,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 112,
@@ -47974,8 +47942,7 @@
         "services": 1,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 113,
@@ -48362,8 +48329,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 114,
@@ -48374,7 +48340,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.44,
+    "rate": 2.43,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -48862,8 +48828,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 115,
@@ -48875,7 +48840,7 @@
       "Palestra",
       "Aria condizionata"
     ],
-    "rate": 2.46,
+    "rate": 2.45,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -49235,8 +49200,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 116,
@@ -49575,8 +49539,7 @@
         "services": 2,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 117,
@@ -49979,8 +49942,7 @@
         "services": 2,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 118,
@@ -50352,8 +50314,7 @@
         "services": 5,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 119,
@@ -50708,8 +50669,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 120,
@@ -51065,8 +51025,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 121,
@@ -51077,7 +51036,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 3.14,
+    "rate": 3.13,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -51405,8 +51364,7 @@
         "services": 2,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 122,
@@ -51418,7 +51376,7 @@
       "Guida turistica",
       "Aria condizionata"
     ],
-    "rate": 2.4,
+    "rate": 2.39,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -51794,8 +51752,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 123,
@@ -51806,7 +51763,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.55,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -52214,8 +52171,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 124,
@@ -52570,8 +52526,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 125,
@@ -52583,7 +52538,7 @@
       "Cancellazione gratuita",
       "Guida turistica"
     ],
-    "rate": 2.79,
+    "rate": 2.78,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -53071,8 +53026,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 126,
@@ -53443,8 +53397,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 127,
@@ -53895,8 +53848,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 128,
@@ -54348,8 +54300,7 @@
         "services": 4,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 129,
@@ -54801,8 +54752,7 @@
         "services": 5,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 130,
@@ -55253,8 +55203,7 @@
         "services": 2,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 131,
@@ -55673,8 +55622,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 132,
@@ -56045,8 +55993,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 133,
@@ -56481,8 +56428,7 @@
         "services": 4,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 134,
@@ -56885,8 +56831,7 @@
         "services": 3,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 135,
@@ -57305,8 +57250,7 @@
         "services": 5,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 136,
@@ -57806,8 +57750,7 @@
         "services": 5,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 137,
@@ -58226,8 +58169,7 @@
         "services": 2,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 138,
@@ -58695,8 +58637,7 @@
         "services": 2,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 139,
@@ -59164,8 +59105,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 140,
@@ -59649,8 +59589,7 @@
         "services": 4,
         "quality": 4
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 141,
@@ -60054,8 +59993,7 @@
         "services": 3,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 142,
@@ -60490,8 +60428,7 @@
         "services": 5,
         "quality": 5
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 143,
@@ -60502,7 +60439,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 2.17,
+    "rate": 2.16,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -60926,8 +60863,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 144,
@@ -60939,7 +60875,7 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 2.63,
+    "rate": 2.62,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -61331,8 +61267,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 145,
@@ -61343,7 +61278,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.51,
+    "rate": 2.5,
     "ratings": {
       "cleaning": 3,
       "position": 2,
@@ -61735,8 +61670,7 @@
         "services": 4,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 146,
@@ -62156,8 +62090,7 @@
         "services": 3,
         "quality": 3
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 147,
@@ -62169,7 +62102,7 @@
       "Aria condizionata",
       "Aria condizionata"
     ],
-    "rate": 2.5,
+    "rate": 2.49,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -62593,8 +62526,7 @@
         "services": 1,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 148,
@@ -62982,8 +62914,7 @@
         "services": 1,
         "quality": 1
       }
-    ],
-    "localRank": 0
+    ]
   },
   {
     "id": 149,
@@ -63418,7 +63349,6 @@
         "services": 2,
         "quality": 2
       }
-    ],
-    "localRank": 0
+    ]
   }
 ]
