@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,13 +24,13 @@ class UDPNotifier implements Runnable {
             multicastGroup = InetAddress.getByName(Server().MULTICAST_ADDRESS);
             socket = new MulticastSocket();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Error while initializing multicast group: "+e.getMessage());
         }
         while (true) {
             try {
                 sleep(TimeUnit.SECONDS.toMillis(Server().UDPNOTIFIER_PERIOD)); //Intervallo di tempo
             } catch (InterruptedException e) {
-                System.out.println("Notification system experienced an unexpected shutdown!");
+                System.err.println("Notification system experienced an unexpected shutdown!");
             }
 
             Map<String, ArrayList<Hotel>> oldLocalRankings = new HashMap<>(Server().localRankings); //Copio il ranking attuale
@@ -67,7 +66,7 @@ class UDPNotifier implements Runnable {
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, Server().MULTICAST_PORT);
                 socket.send(packet);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.err.println("Error while sending the notification message!");
             }
 
             Server().loadUserBadges(); //Aggiornamento dei badge

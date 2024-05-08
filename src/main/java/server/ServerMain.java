@@ -16,23 +16,21 @@ import java.util.concurrent.*;
 
 import static utils.Cities.getCities;
 
+//ServerMain: Classe principale del server che si occupa di istanziare un Singleton accessibile dal package. Memorizza e persiste i dati accessibili dagli utenti e fornisce i metodi di salvataggio e aggiornamento di essi.
 public class ServerMain implements Runnable {
     protected static ServerMain server; //Istanza server Singleton
     private ArrayList<ConnectionHandler> connections; //Lista di tutti gli utenti connessi
     private ServerSocket serverSocket;
     private ExecutorService pool;
-    protected ArrayList<Hotel> hotels = new ArrayList<>();
-    protected ArrayList<User> users = new ArrayList<>();
-    protected Map<String, Badge> userBadges;
-    protected final Map<String, ArrayList<Hotel>> localRankings = new ConcurrentHashMap<>();
-    //private final Object lock = new Object(); TODO: eliminare e usare this nei synchronized
-    //private boolean rankingsChanged = false; TODO: eliminare
+    protected ArrayList<Hotel> hotels = new ArrayList<>(); //Lista di hotel del server
+    protected ArrayList<User> users = new ArrayList<>();//Lista degli utenti che possono autenticarsi sul server
+    protected final Map<String, Badge> userBadges = new ConcurrentHashMap<>();//Map Concorrente di utenti che hanno recensito almeno un hotel -> il badge più alto che hanno mai raggiunto
+    protected final Map<String, ArrayList<Hotel>> localRankings = new ConcurrentHashMap<>();//Map Concorrente di città -> Hotel appartenenti a essa ordinati per punteggio decrescente
     private final String SERVER_ADDRESS = ServerConfig.getServerAddress();
     private final int SERVER_PORT = ServerConfig.getServerPort();
     protected final String MULTICAST_ADDRESS = ServerConfig.getMulticastAddress();
     protected final int MULTICAST_PORT = ServerConfig.getMulticastPort();
     protected final int UDPNOTIFIER_PERIOD = ServerConfig.getUdpNotifierPeriod();
-
 
 
     public static void main(String[] args) {
@@ -56,7 +54,7 @@ public class ServerMain implements Runnable {
         try {
             init();
             serverSocket = new ServerSocket();
-            serverSocket.bind(new InetSocketAddress(SERVER_ADDRESS,SERVER_PORT));
+            serverSocket.bind(new InetSocketAddress(SERVER_ADDRESS, SERVER_PORT));
             pool = Executors.newCachedThreadPool();
             Thread notifier = new Thread(new UDPNotifier());
             notifier.start();
@@ -68,7 +66,8 @@ public class ServerMain implements Runnable {
             }
         } catch (IOException e) {
             //TODO: handle
-            e.printStackTrace();
+            System.err.println("Error while starting the server: "+e.getMessage());
+            System.exit(1);
         }
     }
 
@@ -79,17 +78,23 @@ public class ServerMain implements Runnable {
             Gson gson = new Gson();
             JsonReader hotelsReader = new JsonReader(new FileReader("Hotels.json"));
             JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
-            hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
-            }.getType());
-            users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
-            }.getType());
-            //TODO: Syncronized
+            synchronized (hotels) {
+                hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
+                }.getType());
+            }
+            synchronized (users) {
+                users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
+                }.getType());
+            }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.err.println("File Hotels.json or Users.json not found! Place them in the main directory.");
+            System.exit(1);
         }
         //Calcolo i rate a partire dalle recensioni
-        for (Hotel h : hotels) {
-            h.calculateRate();
+        synchronized (hotels) {
+            for (Hotel h : hotels) {
+                h.calculateRate();
+            }
         }
         //Calcolo i badge degli utenti a partire dalle recensioni
         loadUserBadges();
@@ -97,31 +102,38 @@ public class ServerMain implements Runnable {
         calculateLocalRankings();
     }
 
-    public void loadUserBadges() { //TODO: Inserire nel UDPNotifier
-        userBadges = new ConcurrentHashMap<>();
+    public void loadUserBadges() {
+        userBadges.clear();
         Map<String, Integer> nReviews = new HashMap<>();
         //Creazione map con username -> numero di recensioni per ogni utente che ha scritto almeno una recensione
-        for (Hotel h : hotels)
-            for (Review r : h.getReviews())
-                if (nReviews.containsKey(r.getUsername()))
-                    nReviews.put(r.getUsername(), nReviews.get(r.getUsername()) + 1);
-                else
-                    nReviews.putIfAbsent(r.getUsername(), 1);
+        synchronized (hotels) {
+            for (Hotel h : hotels)
+                for (Review r : h.getReviews())
+                    if (nReviews.containsKey(r.getUsername()))
+                        nReviews.put(r.getUsername(), nReviews.get(r.getUsername()) + 1);
+                    else
+                        nReviews.putIfAbsent(r.getUsername(), 1);
+        }
         //Associazione per ogni utente in nReviews del badge, costruito da numero di recensioni effettuate
         for (Map.Entry<String, Integer> entry : nReviews.entrySet()) {
             userBadges.putIfAbsent(entry.getKey(), new Badge(entry.getValue()));
-//            System.out.println("Chiave: " + entry.getKey() + ", Valore: " + entry.getValue() + ", Badge: " + userBadges.get(entry.getKey()).getBadge()); TODO: remove
         }
     }
 
     public void calculateLocalRankings() {
         //Creazione map con città -> Array di hotel presenti in essa
         localRankings.clear();
+        //Inizializzazione della map con i capoluoghi italiani e un array di hotel vuoto
         for (String c : getCities()) {
             localRankings.put(c, new ArrayList<>());
         }
-        for (Hotel h : hotels) {
-            localRankings.get(h.getCity()).add(h);
+        //Aggiunta di ogni hotel alla città di appartenenza
+        synchronized (hotels) {
+            for (Hotel h : hotels) {
+                synchronized (localRankings.get(h.getCity())) { //Evitare accessi concorrenti all' ArrayList di hotel, che non è un tipo thread safe, anche se si trova in una ConcurrentMap
+                    localRankings.get(h.getCity()).add(h);
+                }
+            }
         }
 
         // Definizione di un Comparator personalizzato per ordinare gli hotel per localRank in ordine decrescente
@@ -131,7 +143,7 @@ public class ServerMain implements Runnable {
         for (ArrayList<Hotel> hotels : localRankings.values()) {
             hotels.sort(rankComparator);
             for (Hotel h : hotels)
-                System.out.println(h.getName() + ", Punteggio:" + h.getRate() + " ," + h.getCity()); //TODO: remove
+                System.out.println(h.getName() + " - Punteggio: " + h.getRate() + " - " + h.getCity()); //TODO: remove
         }
     }
 }

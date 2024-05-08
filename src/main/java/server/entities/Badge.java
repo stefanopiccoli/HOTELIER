@@ -2,8 +2,8 @@ package server.entities;
 
 public class Badge {
     public enum BadgeType {
-        RECENSORE("Recensore", 0, 10, "R"),
-        RECENSORE_ESPERTO("Recensore Esperto", 11, 40, "RE"),
+        RECENSORE("Recensore", 0, 5, "R"),
+        RECENSORE_ESPERTO("Recensore Esperto", 6, 40, "RE"),
         CONTRIBUTORE("Contributore", 41, 70, "C"),
         CONTRIBUTORE_ESPERTO("Contributore Esperto", 71, 80, "CE"),
         CONTRIBUTORE_SUPER("Contributore Super", 81, 9999, "CS");

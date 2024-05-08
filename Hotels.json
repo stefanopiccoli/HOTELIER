@@ -3766,7 +3766,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.54,
+    "rate": 2.51,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -4221,6 +4221,22 @@
         "position": 3,
         "services": 3,
         "quality": 3
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 59,
+          "second": 51
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
       }
     ]
   },
@@ -12701,7 +12717,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.41,
+    "rate": 2.53,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -13108,6 +13124,22 @@
         "position": 3,
         "services": 5,
         "quality": 3
+      },
+      {
+        "username": "stefanop",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 7,
+          "hourOfDay": 20,
+          "minute": 46,
+          "second": 23
+        },
+        "globalScore": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
       }
     ]
   },
@@ -15397,7 +15429,7 @@
       "Aria condizionata",
       "Cancellazione gratuita"
     ],
-    "rate": 2.95,
+    "rate": 2.94,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -16077,7 +16109,7 @@
       "Guida turistica",
       "Piscina"
     ],
-    "rate": 2.34,
+    "rate": 2.33,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -22985,9 +23017,9 @@
       "Guida turistica",
       "Guida turistica"
     ],
-    "rate": 2.54,
+    "rate": 2.39,
     "ratings": {
-      "cleaning": 4,
+      "cleaning": 3,
       "position": 3,
       "services": 3,
       "quality": 3
@@ -23504,6 +23536,118 @@
         "position": 5,
         "services": 5,
         "quality": 5
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 54,
+          "second": 17
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 55,
+          "second": 19
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 55,
+          "second": 45
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 56,
+          "second": 41
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 56,
+          "second": 52
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 57,
+          "second": 1
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
+      },
+      {
+        "username": "francescon",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 8,
+          "hourOfDay": 17,
+          "minute": 57,
+          "second": 22
+        },
+        "globalScore": 1,
+        "cleaning": 1,
+        "position": 1,
+        "services": 1,
+        "quality": 1
       }
     ]
   },
@@ -25305,7 +25449,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.26,
+    "rate": 2.25,
     "ratings": {
       "cleaning": 2,
       "position": 3,
@@ -28984,7 +29128,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.89,
+    "rate": 2.88,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -30355,7 +30499,7 @@
       "SPA",
       "Aria condizionata"
     ],
-    "rate": 2.31,
+    "rate": 2.3,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -32808,7 +32952,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.46,
+    "rate": 2.45,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -34469,7 +34613,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.5,
+    "rate": 2.49,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -34873,7 +35017,7 @@
       "Aria condizionata",
       "Aria condizionata"
     ],
-    "rate": 2.48,
+    "rate": 2.47,
     "ratings": {
       "cleaning": 3,
       "position": 4,
@@ -39328,7 +39472,7 @@
       "SPA",
       "Colazione"
     ],
-    "rate": 2.34,
+    "rate": 2.33,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -49211,7 +49355,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.27,
+    "rate": 2.26,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -49954,7 +50098,7 @@
       "Guida turistica",
       "Riscaldamento"
     ],
-    "rate": 2.76,
+    "rate": 2.75,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -53037,7 +53181,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 1.98,
+    "rate": 1.97,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -53408,7 +53552,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.88,
+    "rate": 2.87,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -55214,7 +55358,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.47,
+    "rate": 2.46,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -57761,7 +57905,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 2.16,
+    "rate": 2.15,
     "ratings": {
       "cleaning": 3,
       "position": 3,

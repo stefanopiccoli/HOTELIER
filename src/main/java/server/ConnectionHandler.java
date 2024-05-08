@@ -14,7 +14,9 @@ import java.util.*;
 
 import static server.ServerMain.Server;
 
-public class ConnectionHandler implements Runnable {//TODO: Move in separate class
+//ConnectionHandler si occupa di gestire ogni connessione Client/Server. Ogni istanza corrisponde a un client connesso al server.
+//Gestisce tutti gli input inviati dal client, li interpreta e risponde con il risultato richiesto.
+public class ConnectionHandler implements Runnable {
     private final Socket client;
 
     private BufferedReader in;
@@ -27,14 +29,14 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
 
     @Override
     public void run() {
-        user = new User();
+        user = new User(); //Utente in sessione
         try {
-            String choice;
+            String choice; //Variabile che contiene il comando inviato dal client
             do {
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-//                    broadcast("user joined the chat...");
-                if (!user.isLogged()) {
+
+                if (!user.isLogged()) {//Menu per utenti non registrati
                     out.println("Welcome to Hotelier!");
                     out.println("/register - Register");
                     out.println("/login - Log In");
@@ -42,7 +44,7 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                     out.println("/searchall - Search all Hotels");
                     out.println("/rankings - Show rankings by city");
                     out.println("/exit - Exit");
-                } else {
+                } else {//Menu per utenti registrati
                     out.println(user.getUsername() + ", welcome to Hotelier!");
                     out.println("/search - Search Hotel");
                     out.println("/searchall - Search all Hotels");
@@ -51,10 +53,9 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                     out.println("/rankings - Show rankings by city");
                     out.println("/logout - Logout");
                     out.println("/exit - Exit");
-
                 }
 
-                choice = in.readLine();
+                choice = in.readLine();//Acquisizione del comando
                 switch (choice) {
                     case "/register":
                         boolean done = false;
@@ -65,7 +66,7 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                                 String username = in.readLine();
                                 out.println("Choose your password:");
                                 String password = in.readLine();
-                                done = register(username, password);
+                                done = register(username, password);//Procedura di registrazione
                             }
                         } else {
                             out.println("Already registered with " + user.getUsername() + ".");
@@ -80,7 +81,7 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                                 String username = in.readLine();
                                 out.println("Choose your password:");
                                 String password = in.readLine();
-                                done = login(username, password);
+                                done = login(username, password);//Procedura di login
                             }
                         } else {
                             out.println("Already logged!");
@@ -149,7 +150,7 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                                     out.println(userReview.getGlobalScore());
                                     done = insertReview(found.getId(), userReview.getGlobalScore(), new ArrayList<>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
                                 } while (!done);
-                            } catch (NullPointerException e) {
+                            } catch (RuntimeException e) {
                                 out.println(e.getMessage());
                             }
                         } else {
@@ -196,6 +197,13 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                         Server().loadUserBadges();
                         Server().calculateLocalRankings();
                         break;
+
+                    case "/exit":
+                        break;
+
+                    default:
+                        out.println("Invalid command.");
+                        break;
                 }
             } while (!Objects.equals(choice, "/exit"));
             out.println("Disconnected.");
@@ -203,75 +211,91 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
             shutdown();
 
         } catch (IOException e) {
-            //TODO: handle
-            e.printStackTrace();
+            out.println("Server error: "+e.getMessage());
         }
     }
 
+    //Registrazione utente
     private boolean register(String username, String password) {
-        if (User.checkUsername(username)) {
-            if (Server().users.stream().noneMatch(user -> user.getUsername().equals(username))) {
-                if (User.checkPassword(password)) {
-                    try {
-                        Server().users.add(new User(username, password));
-                        Writer writer = new FileWriter("Users.json");
-                        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                        gson.toJson(Server().users.toArray(), writer);
-                        writer.flush();
-                        writer.close();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+        synchronized (Server().users) {
+            if (User.checkUsername(username)) {//Controllo requisiti dei caratteri
+                if (Server().users.stream().noneMatch(user -> user.getUsername().equals(username))) {//Controllo sull'unicità dell'username
+                    if (User.checkPassword(password)) {//Controllo requisiti dei caratteri
+                        try {
+                            //Aggiunta dell'utente e scrittura file
+                            Server().users.add(new User(username, password));
+                            Writer writer = new FileWriter("Users.json");
+                            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                            gson.toJson(Server().users.toArray(), writer);
+                            writer.flush();
+                            writer.close();
+                        } catch (IOException e) {
+                            out.println("Error, not registered: "+e.getMessage());
+                            return false;
+                        }
+                        out.println(username + " registered!");
+                        return true; //Registrazione avvenuta con successo
+                    } else {
+                        out.println("Password too short!");
+                        return false;
                     }
-                    out.println(username + " registered!");
-                    return true;
                 } else {
-                    out.println("Password too short!");
+                    out.println("Name already exists!");
                     return false;
                 }
             } else {
-                out.println("Name already exists!");
+                out.println("Username too short!");
                 return false;
             }
-        } else {
-            out.println("Username too short!");
-            return false;
         }
     }
 
+    //Accesso utente
     private boolean login(String username, String password) {
-        if (Server().users.stream().anyMatch(user -> user.getUsername().equals(username))) {
-            if (Server().users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {
-                out.println("Logged as " + username);
-                user.setLogged(true);
-                user.setUsername(username);
-                return true;
+        synchronized (Server().users) {
+            if (Server().users.stream().anyMatch(user -> user.getUsername().equals(username))) {//Controllo della presenza dell'username registrato
+                if (Server().users.stream().filter(user -> user.getUsername().equals(username)).findFirst().get().getPassword().equals(password)) {//Controllo della corrispondenza tra password immessa e password registrata
+                    out.println("Logged as " + username);
+                    user.setLogged(true);
+                    user.setUsername(username);
+                    return true;//Login effettuato e sessione memorizzata
+                } else {
+                    out.println("Wrong password!");
+                    return false;
+                }
             } else {
-                out.println("Wrong password!");
+                out.println("User not registered!");
                 return false;
             }
-        } else {
-            out.println("User not registered!");
-            return false;
         }
     }
 
-    private void logout() {
+    //Disconnessione utente
+    private void logout() {//Chiusura della sessione di login
         user.setLogged(false);
         user.setUsername(null);
     }
 
-    private Hotel searchHotel(String name, String city) throws NullPointerException {
-        Hotel search = Server().hotels.stream().filter((hotel -> hotel.getName().contains(name) && hotel.getCity().contains(city))).findFirst().orElse(null);
-        if (search != null) return search;
-        else throw new NullPointerException("Hotel not found with these parameters!");
+    //Ricerca hotel per nome e città
+    private Hotel searchHotel(String name, String city) throws NullPointerException {//
+        synchronized (Server().hotels) {
+            Hotel search = Server().hotels.stream().filter((hotel -> hotel.getName().contains(name) && hotel.getCity().contains(city))).findFirst().orElse(null);//Ricerca hotel contenente nome e città inserite
+            if (search != null) return search;
+            else throw new NullPointerException("Hotel not found with these parameters!");
+        }
     }
 
+    //Ricerca di tutti gli hotel presenti in una città
     private Hotel[] searchAllHotels(String city) throws NullPointerException {
-        Hotel[] search = Server().hotels.stream().filter((hotel -> hotel.getCity().contains(city))).toArray(Hotel[]::new);
-        if (search.length > 0) return search;
-        else throw new NullPointerException("There are no hotels with this parameter!");
+        synchronized (Server().hotels) {
+            Comparator<Hotel> rankComparator = Comparator.comparingDouble(Hotel::getRate).reversed();//Definizione di un comparatore usato per ordinare per rank decrescente
+            Hotel[] search = Server().hotels.stream().filter((hotel -> hotel.getCity().contains(city))).sorted(rankComparator).toArray(Hotel[]::new);//Ricerca degli hotel che contengono la città inserita
+            if (search.length > 0) return search;
+            else throw new NullPointerException("There are no hotels with this parameter!");
+        }
     }
 
+    //Inserimento recensione
     private boolean insertReview(int id, int GlobalScore, ArrayList<Integer> SingleScores) {
         Writer writer = null;
         boolean isValid = true;
@@ -284,23 +308,25 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
         //Validazione dello score totale
         if (GlobalScore >= 0 && GlobalScore <= 5 && isValid) {
             try {
-                //Ottengo l'hotel dall'id
-                Hotel found = Server().hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
-                if (found != null) {
-                    //Scrivo sul file degli hotel la recensione e ricalcolo il rate
-                    writer = new FileWriter("Hotels.json");
-                    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                    found.addReview(new Review(user.getUsername(), GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
-                    found.calculateRate();
-                    Server().hotels.set(Server().hotels.indexOf(found), found);
-                    gson.toJson(Server().hotels.toArray(), writer);
-                    writer.flush();
-                    writer.close();
-                    out.println("The review has been successfully submitted!");
-                    return true;
+                synchronized (Server().hotels) {
+                    //Ottengo l'hotel dall'id
+                    Hotel found = Server().hotels.stream().filter(hotel -> hotel.getId() == id).findFirst().orElse(null);
+                    if (found != null) {
+                        //Scrittura sul file degli hotel, della recensione e ricalcolo del rate
+                        writer = new FileWriter("Hotels.json");
+                        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                        found.addReview(new Review(user.getUsername(), GlobalScore, SingleScores.get(0), SingleScores.get(1), SingleScores.get(2), SingleScores.get(3)));
+                        found.calculateRate();
+                        Server().hotels.set(Server().hotels.indexOf(found), found);
+                        gson.toJson(Server().hotels.toArray(), writer);
+                        writer.flush();
+                        writer.close();
+                        out.println("The review has been successfully submitted!");
+                        return true;
+                    }
                 }
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                out.println("Error, review not submitted: "+e.getMessage());
             }
         }
         out.println("Ratings must be between 1 and 10!");
@@ -326,7 +352,7 @@ public class ConnectionHandler implements Runnable {//TODO: Move in separate cla
                 client.close();//Chiude il socket
             }
         } catch (IOException e) {
-            out.println("An error occurred closing the connection.");
+            out.println("An error occurred while closing the connection.");
         }
     }
 
