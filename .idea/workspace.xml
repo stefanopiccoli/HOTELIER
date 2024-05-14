@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Comments, Exception management, Client and server shutdown, syncronized hotels and users, ordered searchAllHotels">
+    <list default="true" id="26147700-bae1-45de-9e1e-53d6b4d22310" name="Changes" comment="Comments, Print server log on refresh">
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.10.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,8 @@
     "Application.ClientMain.executor": "Run",
     "Application.ServerMain.executor": "Run",
     "Attach to process.pid 13372.executor": "ProcessAttachDebug",
+    "Maven.HOTELIER [compile].executor": "Run",
+    "Maven.HOTELIER [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -84,6 +88,7 @@
       <recent name="C:\Users\stefa\IdeaProjects\HOTELIER" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stefa\IdeaProjects\HOTELIER\lib" />
       <recent name="C:\Users\stefa\IdeaProjects\HOTELIER" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
@@ -282,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715193862807</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Comments, Print server log on refresh">
+      <option name="closed" value="true" />
+      <created>1715679661658</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715679661658</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +337,7 @@
     <MESSAGE value="Config, Update calculateRate, rename Review rate to globalScore" />
     <MESSAGE value="server.properties, client.properties, UDPNotifier, ConnectionHandler, code cleaning" />
     <MESSAGE value="Comments, Exception management, Client and server shutdown, syncronized hotels and users, ordered searchAllHotels" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments, Exception management, Client and server shutdown, syncronized hotels and users, ordered searchAllHotels" />
+    <MESSAGE value="Comments, Print server log on refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments, Print server log on refresh" />
   </component>
 </project>
