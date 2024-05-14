@@ -11,6 +11,8 @@ import utils.ServerConfig;
 
 import java.io.*;
 import java.net.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -20,8 +22,8 @@ import static utils.Cities.getCities;
 public class ServerMain implements Runnable {
     protected static ServerMain server; //Istanza server Singleton
     private ArrayList<ConnectionHandler> connections; //Lista di tutti gli utenti connessi
-    private ServerSocket serverSocket;
-    private ExecutorService pool;
+    private ServerSocket serverSocket; //Socket del server
+    private ExecutorService pool; //Pool di ConnectionHandler per ogni utente
     protected ArrayList<Hotel> hotels = new ArrayList<>(); //Lista di hotel del server
     protected ArrayList<User> users = new ArrayList<>();//Lista degli utenti che possono autenticarsi sul server
     protected final Map<String, Badge> userBadges = new ConcurrentHashMap<>();//Map Concorrente di utenti che hanno recensito almeno un hotel -> il badge più alto che hanno mai raggiunto
@@ -54,18 +56,17 @@ public class ServerMain implements Runnable {
         try {
             init();
             serverSocket = new ServerSocket();
-            serverSocket.bind(new InetSocketAddress(SERVER_ADDRESS, SERVER_PORT));
-            pool = Executors.newCachedThreadPool();
-            Thread notifier = new Thread(new UDPNotifier());
-            notifier.start();
+            serverSocket.bind(new InetSocketAddress(SERVER_ADDRESS, SERVER_PORT)); //Inizializzazione indirizzo e porta del socket
+            pool = Executors.newCachedThreadPool(); //Inizializzazione CachedThreadPool
+            Thread notifier = new Thread(new UDPNotifier()); //Inizializzazione thread per scansione e invio notifiche
+            notifier.start(); //Esecuzione del thread
             while (true) {
-                Socket client = serverSocket.accept();
-                ConnectionHandler handler = new ConnectionHandler(client);
-                connections.add(handler);
-                pool.execute(handler);
+                Socket client = serverSocket.accept(); //Ogni richiesta in arrivo dai client viene accettata
+                ConnectionHandler handler = new ConnectionHandler(client); //Viene inizializzato un ConnectionHandler con la connessione stabilita
+                connections.add(handler); //Viene aggiunta la connessione alla lista
+                pool.execute(handler); //Viene eseguito il ConnectionHandler che si occuperà di tutte le richieste del client
             }
         } catch (IOException e) {
-            //TODO: handle
             System.err.println("Error while starting the server: "+e.getMessage());
             System.exit(1);
         }
@@ -80,11 +81,11 @@ public class ServerMain implements Runnable {
             JsonReader usersReader = new JsonReader(new FileReader("Users.json"));
             synchronized (hotels) {
                 hotels = gson.fromJson(hotelsReader, new TypeToken<ArrayList<Hotel>>() {
-                }.getType());
+                }.getType()); //Caricamento Hotels da json
             }
             synchronized (users) {
                 users = gson.fromJson(usersReader, new TypeToken<ArrayList<User>>() {
-                }.getType());
+                }.getType()); //Caricamento Users da json
             }
         } catch (FileNotFoundException e) {
             System.err.println("File Hotels.json or Users.json not found! Place them in the main directory.");
@@ -139,11 +140,12 @@ public class ServerMain implements Runnable {
         // Definizione di un Comparator personalizzato per ordinare gli hotel per localRank in ordine decrescente
         Comparator<Hotel> rankComparator = Comparator.comparingDouble(Hotel::getRate).reversed();
 
+        System.out.println("\n\n["+ LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) +"] Updating local rankings...");
         //Ordinamento decrescente degli hotel di ogni città
         for (ArrayList<Hotel> hotels : localRankings.values()) {
             hotels.sort(rankComparator);
             for (Hotel h : hotels)
-                System.out.println(h.getName() + " - Punteggio: " + h.getRate() + " - " + h.getCity()); //TODO: remove
+                System.out.println(h.getName() + " - Punteggio: " + h.getRate() + " - " + h.getCity());
         }
     }
 }

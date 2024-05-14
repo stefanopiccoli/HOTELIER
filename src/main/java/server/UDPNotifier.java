@@ -21,8 +21,8 @@ class UDPNotifier implements Runnable {
         InetAddress multicastGroup = null;
         MulticastSocket socket = null;
         try {
-            multicastGroup = InetAddress.getByName(Server().MULTICAST_ADDRESS);
-            socket = new MulticastSocket();
+            multicastGroup = InetAddress.getByName(Server().MULTICAST_ADDRESS); //Inizializzazione indirizzo
+            socket = new MulticastSocket(); //Inizializzazione MulticastSocket
         } catch (IOException e) {
             System.err.println("Error while initializing multicast group: "+e.getMessage());
         }
@@ -40,15 +40,13 @@ class UDPNotifier implements Runnable {
             //Inserisco in changedRankings tutti gli hotel che sono passati in prima posizione
             for (String city : oldLocalRankings.keySet()) { //Ciclo sul vecchio ranking
                 if (!oldLocalRankings.get(city).isEmpty() && !Server().localRankings.get(city).isEmpty()) {
-                    Hotel firstOld = oldLocalRankings.get(city).get(0);//TODO: check not null
-                    Hotel firstNew = Server().localRankings.get(city).get(0);//TODO: check not null
+                    Hotel firstOld = oldLocalRankings.get(city).get(0);
+                    Hotel firstNew = Server().localRankings.get(city).get(0);
                     if (!firstOld.getName().equals(firstNew.getName())) { //Verifico se la prima posizione è cambiata
                         changedRankings.putIfAbsent(city, firstNew); //Inserisco nei cambiamenti il nuovo primo hotel
                     }
                 }
             }
-
-            //TODO: comment
 
             //Creazione del messaggio
             try {
@@ -63,8 +61,8 @@ class UDPNotifier implements Runnable {
                 }
 
                 byte[] buffer = message.getBytes();
-                DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, Server().MULTICAST_PORT);
-                socket.send(packet);
+                DatagramPacket packet = new DatagramPacket(buffer, buffer.length, multicastGroup, Server().MULTICAST_PORT); //Inizializzazione datagramma
+                socket.send(packet); //Invio del datagramma
             } catch (IOException e) {
                 System.err.println("Error while sending the notification message!");
             }

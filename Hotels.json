@@ -831,7 +831,7 @@
       "Cancellazione gratuita",
       "Cancellazione gratuita"
     ],
-    "rate": 2.64,
+    "rate": 2.63,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -1702,7 +1702,7 @@
       "SPA",
       "Palestra"
     ],
-    "rate": 2.02,
+    "rate": 2.01,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -2041,7 +2041,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.41,
+    "rate": 2.4,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -2413,7 +2413,7 @@
       "TV in camera",
       "Guida turistica"
     ],
-    "rate": 2.24,
+    "rate": 2.23,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -3766,7 +3766,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.51,
+    "rate": 2.5,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -4670,7 +4670,7 @@
       "Palestra",
       "Guida turistica"
     ],
-    "rate": 1.97,
+    "rate": 1.96,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -5573,7 +5573,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 2.45,
+    "rate": 2.44,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -5976,7 +5976,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.7,
+    "rate": 2.69,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -6364,7 +6364,7 @@
       "Cancellazione gratuita",
       "Piscina"
     ],
-    "rate": 2.93,
+    "rate": 2.92,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -6735,7 +6735,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.36,
+    "rate": 2.35,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -8024,7 +8024,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.8,
+    "rate": 2.79,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -8431,54 +8431,6 @@
         "position": 2,
         "services": 2,
         "quality": 5
-      },
-      {
-        "username": "mago candido",
-        "date": {
-          "year": 2024,
-          "month": 4,
-          "dayOfMonth": 5,
-          "hourOfDay": 11,
-          "minute": 8,
-          "second": 54
-        },
-        "globalScore": 1,
-        "cleaning": 1,
-        "position": 1,
-        "services": 1,
-        "quality": 1
-      },
-      {
-        "username": "mago candido",
-        "date": {
-          "year": 2024,
-          "month": 4,
-          "dayOfMonth": 5,
-          "hourOfDay": 11,
-          "minute": 9,
-          "second": 40
-        },
-        "globalScore": 1,
-        "cleaning": 1,
-        "position": 1,
-        "services": 1,
-        "quality": 1
-      },
-      {
-        "username": "mago candido",
-        "date": {
-          "year": 2024,
-          "month": 4,
-          "dayOfMonth": 5,
-          "hourOfDay": 11,
-          "minute": 10,
-          "second": 10
-        },
-        "globalScore": 1,
-        "cleaning": 1,
-        "position": 1,
-        "services": 1,
-        "quality": 1
       }
     ]
   },
@@ -8491,7 +8443,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.65,
+    "rate": 2.64,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -9732,7 +9684,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.64,
+    "rate": 2.63,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -12006,7 +11958,7 @@
       "TV in camera",
       "Riscaldamento"
     ],
-    "rate": 2.39,
+    "rate": 2.38,
     "ratings": {
       "cleaning": 2,
       "position": 3,
@@ -12717,7 +12669,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.53,
+    "rate": 2.52,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -13153,7 +13105,7 @@
       "Piscina",
       "Colazione"
     ],
-    "rate": 1.96,
+    "rate": 1.95,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -13589,7 +13541,7 @@
       "Guida turistica",
       "Riscaldamento"
     ],
-    "rate": 2.56,
+    "rate": 2.55,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -14025,7 +13977,7 @@
       "Palestra",
       "Colazione"
     ],
-    "rate": 2.31,
+    "rate": 2.3,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -14493,7 +14445,7 @@
       "SPA",
       "Colazione"
     ],
-    "rate": 2.69,
+    "rate": 2.68,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -15769,7 +15721,7 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 2.7,
+    "rate": 2.69,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -16449,7 +16401,7 @@
       "Cancellazione gratuita",
       "Palestra"
     ],
-    "rate": 2.8,
+    "rate": 2.79,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -16933,7 +16885,7 @@
       "Piscina",
       "Colazione"
     ],
-    "rate": 2.72,
+    "rate": 2.71,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -17385,7 +17337,7 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 2.87,
+    "rate": 2.86,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -18257,7 +18209,7 @@
       "Colazione",
       "Cancellazione gratuita"
     ],
-    "rate": 2.6,
+    "rate": 2.59,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -18645,7 +18597,7 @@
       "Piscina",
       "Palestra"
     ],
-    "rate": 2.45,
+    "rate": 2.44,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -19563,7 +19515,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.43,
+    "rate": 2.42,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -20483,7 +20435,7 @@
       "SPA",
       "Guida turistica"
     ],
-    "rate": 2.32,
+    "rate": 2.31,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -21338,7 +21290,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.55,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -22661,7 +22613,7 @@
       "Cancellazione gratuita",
       "Guida turistica"
     ],
-    "rate": 2.16,
+    "rate": 2.15,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -23017,7 +22969,7 @@
       "Guida turistica",
       "Guida turistica"
     ],
-    "rate": 2.39,
+    "rate": 2.38,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -23660,7 +23612,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.58,
+    "rate": 2.57,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -24063,7 +24015,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 2.44,
+    "rate": 2.43,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -24563,7 +24515,7 @@
       "SPA",
       "Palestra"
     ],
-    "rate": 2.68,
+    "rate": 2.67,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -24998,7 +24950,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.37,
+    "rate": 2.36,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -27047,7 +26999,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.04,
+    "rate": 2.03,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -27387,7 +27339,7 @@
       "Cancellazione gratuita",
       "TV in camera"
     ],
-    "rate": 2.58,
+    "rate": 2.57,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -27806,7 +27758,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.45,
+    "rate": 2.44,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -28661,7 +28613,7 @@
       "Palestra",
       "Riscaldamento"
     ],
-    "rate": 2.19,
+    "rate": 2.18,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -31259,7 +31211,7 @@
       "Cancellazione gratuita",
       "Riscaldamento"
     ],
-    "rate": 2.03,
+    "rate": 2.02,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -32098,7 +32050,7 @@
       "Aria condizionata",
       "Riscaldamento"
     ],
-    "rate": 2.31,
+    "rate": 2.3,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -33774,7 +33726,7 @@
     "services": [
       "Cancellazione gratuita"
     ],
-    "rate": 2.62,
+    "rate": 2.61,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -37437,7 +37389,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.7,
+    "rate": 2.69,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -40454,7 +40406,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.85,
+    "rate": 2.84,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -40826,7 +40778,7 @@
       "Aria condizionata",
       "Guida turistica"
     ],
-    "rate": 2.08,
+    "rate": 2.07,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -41165,7 +41117,7 @@
     "services": [
       "Guida turistica"
     ],
-    "rate": 2.33,
+    "rate": 2.32,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -42035,7 +41987,7 @@
     "services": [
       "TV in camera"
     ],
-    "rate": 2.38,
+    "rate": 2.37,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -42502,7 +42454,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.52,
+    "rate": 2.51,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -42889,7 +42841,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.34,
+    "rate": 2.33,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -43357,7 +43309,7 @@
       "Palestra",
       "Aria condizionata"
     ],
-    "rate": 2.34,
+    "rate": 2.33,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -44694,7 +44646,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.63,
+    "rate": 2.62,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -45565,7 +45517,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 2.34,
+    "rate": 2.33,
     "ratings": {
       "cleaning": 3,
       "position": 4,
@@ -46032,7 +45984,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.69,
+    "rate": 2.68,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -46468,7 +46420,7 @@
       "SPA",
       "Guida turistica"
     ],
-    "rate": 2.39,
+    "rate": 2.38,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -47694,7 +47646,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.59,
+    "rate": 2.58,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -50469,7 +50421,7 @@
     "services": [
       "Riscaldamento"
     ],
-    "rate": 2.45,
+    "rate": 2.44,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -52326,7 +52278,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.27,
+    "rate": 2.26,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -52682,7 +52634,7 @@
       "Cancellazione gratuita",
       "Guida turistica"
     ],
-    "rate": 2.78,
+    "rate": 2.77,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -54456,7 +54408,7 @@
       "Colazione",
       "TV in camera"
     ],
-    "rate": 2.52,
+    "rate": 2.51,
     "ratings": {
       "cleaning": 4,
       "position": 3,
@@ -54907,7 +54859,7 @@
     "services": [
       "Palestra"
     ],
-    "rate": 2.56,
+    "rate": 2.55,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -56148,7 +56100,7 @@
     "services": [
       "Aria condizionata"
     ],
-    "rate": 1.84,
+    "rate": 1.83,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -56986,7 +56938,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.53,
+    "rate": 2.52,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -57406,7 +57358,7 @@
       "TV in camera",
       "Cancellazione gratuita"
     ],
-    "rate": 2.35,
+    "rate": 2.34,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -58325,7 +58277,7 @@
       "Colazione",
       "Cancellazione gratuita"
     ],
-    "rate": 2.55,
+    "rate": 2.54,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -58793,7 +58745,7 @@
       "Palestra",
       "Aria condizionata"
     ],
-    "rate": 2.51,
+    "rate": 2.61,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -59248,6 +59200,22 @@
         "position": 4,
         "services": 3,
         "quality": 2
+      },
+      {
+        "username": "prova123",
+        "date": {
+          "year": 2024,
+          "month": 4,
+          "dayOfMonth": 14,
+          "hourOfDay": 10,
+          "minute": 11,
+          "second": 58
+        },
+        "globalScore": 5,
+        "cleaning": 5,
+        "position": 5,
+        "services": 5,
+        "quality": 5
       }
     ]
   },
@@ -59261,7 +59229,7 @@
       "Cancellazione gratuita",
       "TV in camera"
     ],
-    "rate": 2.54,
+    "rate": 2.53,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -59745,7 +59713,7 @@
       "Colazione",
       "Riscaldamento"
     ],
-    "rate": 2.64,
+    "rate": 2.63,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -60148,7 +60116,7 @@
     "services": [
       "Colazione"
     ],
-    "rate": 2.79,
+    "rate": 2.78,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -61826,7 +61794,7 @@
       "Colazione",
       "Aria condizionata"
     ],
-    "rate": 2.42,
+    "rate": 2.41,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -62682,7 +62650,7 @@
       "SPA",
       "Piscina"
     ],
-    "rate": 2.83,
+    "rate": 2.82,
     "ratings": {
       "cleaning": 3,
       "position": 3,
@@ -63069,7 +63037,7 @@
     "services": [
       "SPA"
     ],
-    "rate": 2.29,
+    "rate": 2.28,
     "ratings": {
       "cleaning": 3,
       "position": 3,

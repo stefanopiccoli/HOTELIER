@@ -28,7 +28,6 @@ public class Cities {
         cities.add("Cagliari");
     }
 
-    // Metodo per ottenere il capoluogo di regione dato il nome della regione
     public static ArrayList<String> getCities() {
         return cities;
     }

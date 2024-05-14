@@ -9,10 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hotels.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/Users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ConnectionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/UDPNotifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/UDPNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/entities/Badge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/entities/Badge.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +62,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ClientMain (1).executor": "Run",
-    "Application.ClientMain.executor": "Debug",
+    "Application.ClientMain (1).executor": "Debug",
+    "Application.ClientMain.executor": "Run",
     "Application.ServerMain.executor": "Run",
     "Attach to process.pid 13372.executor": "ProcessAttachDebug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -76,6 +73,9 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/stefa/IdeaProjects/HOTELIER",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
@@ -93,7 +93,7 @@
       <recent name="utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager" selected="Application.ServerMain">
     <configuration name="ClientMain (1)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="client.ClientMain" />
       <module name="HOTELIER" />
@@ -140,8 +140,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMain" />
         <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715028060969</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Comments, Exception management, Client and server shutdown, syncronized hotels and users, ordered searchAllHotels">
+      <option name="closed" value="true" />
+      <created>1715193862807</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715193862807</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -8,10 +8,10 @@ public class Badge {
         CONTRIBUTORE_ESPERTO("Contributore Esperto", 71, 80, "CE"),
         CONTRIBUTORE_SUPER("Contributore Super", 81, 9999, "CS");
 
-        private final String description;
-        private final int boundFrom;
-        private final int boundTo;
-        private final String initials;
+        private final String description; //Nome badge
+        private final int boundFrom; //Limite inferiore di recensioni per il badge
+        private final int boundTo; //Limite superiore di recensioni per il badge
+        private final String initials; //Abbreviazione per la stampa
 
         BadgeType(String description, int boundFrom, int boundTo, String initials) {
             this.description = description;

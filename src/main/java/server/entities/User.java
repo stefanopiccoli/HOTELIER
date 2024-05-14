@@ -40,11 +40,11 @@ public class User {
     }
 
     public static boolean checkUsername(String username) {
-        return (!username.isBlank() && username.length() >= 8);
+        return (!username.isBlank() && username.length() >= 8); //Vincoli di composizione dell'username
     }
 
     public static boolean checkPassword(String password) {
-        return (!password.isBlank() && password.length() >= 8);
+        return (!password.isBlank() && password.length() >= 8); //Vincoli di composizione della password
     }
 
 }

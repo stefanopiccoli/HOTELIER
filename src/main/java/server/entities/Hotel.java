@@ -89,7 +89,7 @@ public class Hotel {
         }
     }
 
-    private int getMaxAttributeLength() {
+    private int getMaxAttributeLength() { //Acquisizione lunghezza maggiore utile per la stampa allineata
         int maxLength = 0;
         maxLength = Math.max(maxLength, this.name.length());
         maxLength = Math.max(maxLength, this.description.length());
@@ -103,6 +103,7 @@ public class Hotel {
         return maxLength;
     }
 
+    //Metodo per il calcolo del rate dell'hotel
     public void calculateRate() {
         final double TIME_WEIGHT = -0.0005;
         final double MAX_REVIEW = 100;
@@ -111,7 +112,7 @@ public class Hotel {
         double position = 0.0;
         double services = 0.0;
         double quality = 0.0;
-        int reviewsSize = this.reviews.size();
+        int reviewsSize = this.reviews.size(); //Numero di recensioni
         //Inizializzazione alla data attuale
         Calendar endDate = Calendar.getInstance();
 
@@ -125,7 +126,7 @@ public class Hotel {
             services+=r.getServices();
             quality+=r.getQuality();
         }
-        double sizeWeight = reviewsSize / MAX_REVIEW;
+        double sizeWeight = reviewsSize / MAX_REVIEW; //Peso del numero di recensioni
         double rate = (totalWeightedScore / reviewsSize) + sizeWeight; //Media dei voti sommata al premio delle quantità di recensioni
         if (rate>5.00) rate = 5.00; //Nel caso viene superato il punteggio massimo di 5 verrà mostrato 5, anche se il teorico sará più elevato e solido (più difficile da abbassare rispetto a un 5 reale)
 

@@ -20,7 +20,7 @@ public class ClientMain implements Runnable {
     private PrintWriter out;
     private boolean done = false;
     private static final String SERVER_ADDRESS = ClientConfig.getServerAddress();
-    private static final int SERVER_PORT = ClientConfig.getServerPort();//TODO: PARAMETERS (ports, address, schedule time)
+    private static final int SERVER_PORT = ClientConfig.getServerPort();
     private static final String MULTICAST_ADDRESS = ClientConfig.getMulticastAddress();
     private static final int MULTICAST_PORT = ClientConfig.getMulticastPort();
 

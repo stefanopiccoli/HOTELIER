@@ -17,10 +17,9 @@ import static server.ServerMain.Server;
 //ConnectionHandler si occupa di gestire ogni connessione Client/Server. Ogni istanza corrisponde a un client connesso al server.
 //Gestisce tutti gli input inviati dal client, li interpreta e risponde con il risultato richiesto.
 public class ConnectionHandler implements Runnable {
-    private final Socket client;
-
-    private BufferedReader in;
-    private PrintWriter out;
+    private final Socket client; //Socket della connessione con il client
+    private BufferedReader in; //Messaggi provenienti dal client
+    private PrintWriter out; //Invio di messaggi verso il client
     private User user;
 
     public ConnectionHandler(Socket client) {
@@ -33,8 +32,8 @@ public class ConnectionHandler implements Runnable {
         try {
             String choice; //Variabile che contiene il comando inviato dal client
             do {
-                out = new PrintWriter(client.getOutputStream(), true);
-                in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                out = new PrintWriter(client.getOutputStream(), true); //Inizializzazione del PrintWriter per la scrittura sullo stream di output del socket del client
+                in = new BufferedReader(new InputStreamReader(client.getInputStream())); //Inizializzazione del BufferedReader allo stream proveniente dal socket del client
 
                 if (!user.isLogged()) {//Menu per utenti non registrati
                     out.println("Welcome to Hotelier!");
@@ -55,7 +54,7 @@ public class ConnectionHandler implements Runnable {
                     out.println("/exit - Exit");
                 }
 
-                choice = in.readLine();//Acquisizione del comando
+                choice = in.readLine();//Acquisizione del comando, all'arrivo del comando dal client viene riconosciuto e gestito
                 switch (choice) {
                     case "/register":
                         boolean done = false;
@@ -89,7 +88,7 @@ public class ConnectionHandler implements Runnable {
                         break;
                     case "/logout":
                         if (user.isLogged()) {
-                            logout();
+                            logout();//Procedura di logout
                         } else {
                             out.println("You are not Logged In, try /login.");
                         }
@@ -101,7 +100,7 @@ public class ConnectionHandler implements Runnable {
                         out.println("Search hotel city:");
                         String hotelCity = in.readLine();
                         try {
-                            Hotel found = searchHotel(hotelName, hotelCity);
+                            Hotel found = searchHotel(hotelName, hotelCity); //Procedura di ricerca dell'hotel
                             out.println(found.printInfo(Server().userBadges));
                         } catch (NullPointerException e) {
                             out.println(e.getMessage());
@@ -112,7 +111,7 @@ public class ConnectionHandler implements Runnable {
                         out.println("Search hotel city:");
                         String hotelsCity = in.readLine();
                         try {
-                            Hotel[] found = searchAllHotels(hotelsCity);
+                            Hotel[] found = searchAllHotels(hotelsCity); //Procedura di ricerca degli hotel per città
                             for (Hotel hotel : found) {
                                 out.println(hotel.printInfo(Server().userBadges) + "\n\n");
                             }
@@ -130,9 +129,9 @@ public class ConnectionHandler implements Runnable {
                                     hotelName = in.readLine();
                                     out.println("Search hotel city:");
                                     hotelCity = in.readLine();
-                                    found = searchHotel(hotelName, hotelCity);
+                                    found = searchHotel(hotelName, hotelCity); //Hotel trovato con la procedura di ricerca
                                     out.println(found.printInfo(Server().userBadges));
-                                    out.println("Do you want to insert a review on this hotel? Y/n");
+                                    out.println("Do you want to insert a review on this hotel? Y/n"); //Conferma dell'hotel
                                 } while (!Objects.equals(in.readLine(), "Y"));
                                 done = false;
                                 do {
@@ -148,7 +147,7 @@ public class ConnectionHandler implements Runnable {
                                     out.println("Quality:");
                                     userReview.setQuality(Integer.parseInt(in.readLine()));
                                     out.println(userReview.getGlobalScore());
-                                    done = insertReview(found.getId(), userReview.getGlobalScore(), new ArrayList<>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));
+                                    done = insertReview(found.getId(), userReview.getGlobalScore(), new ArrayList<>(List.of(userReview.getCleaning(), userReview.getPosition(), userReview.getServices(), userReview.getQuality())));//Procedura di inserimento della recensione
                                 } while (!done);
                             } catch (RuntimeException e) {
                                 out.println(e.getMessage());
@@ -159,7 +158,7 @@ public class ConnectionHandler implements Runnable {
                         break;
                     case "/badge":
                         if (user.isLogged()) {
-                            Badge badge = showMyBadge();
+                            Badge badge = showMyBadge(); //Procedura di stampa del badge maggiore raggiunto
                             out.println("BADGE:");
                             out.println(user.getUsername() + " : " + badge.getBadge() + " (" + badge.getInitials() + ")");
                         } else {
@@ -172,7 +171,7 @@ public class ConnectionHandler implements Runnable {
                         String city = in.readLine();
                         for (String key : Server().localRankings.keySet()) {
                             int position = 1;
-                            if (key.toLowerCase().contains(city.toLowerCase())) {
+                            if (key.toLowerCase().contains(city.toLowerCase())) {//Stampa ranking di una città
                                 for (Hotel h : Server().localRankings.get(key)) {
                                     out.println(position + ". " + h.getName() + " (" + h.getRate() + ")");
                                     position++;
@@ -198,10 +197,10 @@ public class ConnectionHandler implements Runnable {
                         Server().calculateLocalRankings();
                         break;
 
-                    case "/exit":
+                    case "/exit": //Disconnessione del client e della sessione
                         break;
 
-                    default:
+                    default: //Comando non riconosciuto
                         out.println("Invalid command.");
                         break;
                 }
